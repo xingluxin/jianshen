@@ -1,0 +1,137 @@
+[ 2015-09-22T09:13:12+08:00 ] 127.0.0.1 /jianshen/Home/User/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\htdocs\jianshen\Application\Home\Controller\UserController.class.php 第 5 行.
+NOTIC: [8] Undefined index: lite D:\htdocs\jianshen\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `js_member` [ RunTime:0.0000s ]
+SQL: SELECT `uid`,`nickname`,`truename`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `js_member` WHERE `uid` = 32 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `js_member` SET `login`=`login`+1,`last_login_time`='1442884392',`last_login_ip`='2130706433' WHERE `uid` = 32 [ RunTime:0.0000s ]
+
+[ 2015-09-22T09:13:13+08:00 ] 127.0.0.1 /jianshen/Home/User/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.015600s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\htdocs\jianshen\Application\Home\Controller\UserController.class.php 第 5 行.
+NOTIC: [8] Undefined index: lite D:\htdocs\jianshen\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `js_member` [ RunTime:0.0000s ]
+SQL: SELECT `uid`,`nickname`,`truename`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `js_member` WHERE `uid` = 32 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `js_member` SET `login`=`login`+1,`last_login_time`='1442884393',`last_login_ip`='2130706433' WHERE `uid` = 32 [ RunTime:0.0000s ]
+
+[ 2015-09-22T09:13:14+08:00 ] 127.0.0.1 /jianshen/Home/User/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\htdocs\jianshen\Application\Home\Controller\UserController.class.php 第 5 行.
+NOTIC: [8] Undefined index: lite D:\htdocs\jianshen\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `js_member` [ RunTime:0.0000s ]
+SQL: SELECT `uid`,`nickname`,`truename`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `js_member` WHERE `uid` = 32 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `js_member` SET `login`=`login`+1,`last_login_time`='1442884394',`last_login_ip`='2130706433' WHERE `uid` = 32 [ RunTime:0.0000s ]
+
+[ 2015-09-22T09:13:15+08:00 ] 127.0.0.1 /jianshen/Home/User/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\htdocs\jianshen\Application\Home\Controller\UserController.class.php 第 5 行.
+NOTIC: [8] Undefined index: lite D:\htdocs\jianshen\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `js_member` [ RunTime:0.0000s ]
+SQL: SELECT `uid`,`nickname`,`truename`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `js_member` WHERE `uid` = 32 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `js_member` SET `login`=`login`+1,`last_login_time`='1442884395',`last_login_ip`='2130706433' WHERE `uid` = 32 [ RunTime:0.0000s ]
+
+[ 2015-09-22T09:13:16+08:00 ] 127.0.0.1 /jianshen/Home/User/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\htdocs\jianshen\Application\Home\Controller\UserController.class.php 第 5 行.
+NOTIC: [8] Undefined index: lite D:\htdocs\jianshen\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `js_member` [ RunTime:0.0000s ]
+SQL: SELECT `uid`,`nickname`,`truename`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `js_member` WHERE `uid` = 32 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `js_member` SET `login`=`login`+1,`last_login_time`='1442884396',`last_login_ip`='2130706433' WHERE `uid` = 32 [ RunTime:0.0000s ]
+
+[ 2015-09-22T10:18:03+08:00 ] 127.0.0.1 /jianshen/Home/Pay/getList/cat/1.html
+ERR: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'DES LIMIT 0,10' at line 1
+
+[ 2015-09-22T10:18:12+08:00 ] 127.0.0.1 /jianshen/Home/Pay/getList/cat/1.html
+ERR: 模板不存在:./Application/Home/View/Pay/getList.html
+
+[ 2015-09-22T10:34:38+08:00 ] 127.0.0.1 /jianshen/Home/Pay/excharge.html
+ERR: 模板不存在:./Application/Home/View/Pay/excharge.html
+
+[ 2015-09-22T10:59:02+08:00 ] 127.0.0.1 /jianshen/Home/User/wallet.html
+ERR: 非法操作:wallet
+
+[ 2015-09-22T15:46:10+08:00 ] 127.0.0.1 /jianshen/Home/User/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\htdocs\jianshen\Application\Home\Controller\UserController.class.php 第 5 行.
+NOTIC: [8] Undefined index: lite D:\htdocs\jianshen\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `js_member` [ RunTime:0.0020s ]
+SQL: SELECT `uid`,`nickname`,`truename`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `js_member` WHERE `uid` = 32 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `js_member` SET `login`=`login`+1,`last_login_time`='1442907970',`last_login_ip`='2130706433' WHERE `uid` = 32 [ RunTime:0.0000s ]
+
+[ 2015-09-22T15:46:11+08:00 ] 127.0.0.1 /jianshen/Home/User/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\htdocs\jianshen\Application\Home\Controller\UserController.class.php 第 5 行.
+NOTIC: [8] Undefined index: lite D:\htdocs\jianshen\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `js_member` [ RunTime:0.0020s ]
+SQL: SELECT `uid`,`nickname`,`truename`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `js_member` WHERE `uid` = 32 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `js_member` SET `login`=`login`+1,`last_login_time`='1442907971',`last_login_ip`='2130706433' WHERE `uid` = 32 [ RunTime:0.0000s ]
+
+[ 2015-09-22T15:46:11+08:00 ] 127.0.0.1 /jianshen/Home/User/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\htdocs\jianshen\Application\Home\Controller\UserController.class.php 第 5 行.
+NOTIC: [8] Undefined index: lite D:\htdocs\jianshen\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `js_member` [ RunTime:0.0030s ]
+SQL: SELECT `uid`,`nickname`,`truename`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `js_member` WHERE `uid` = 32 LIMIT 1   [ RunTime:0.0010s ]
+SQL: UPDATE `js_member` SET `login`=`login`+1,`last_login_time`='1442907971',`last_login_ip`='2130706433' WHERE `uid` = 32 [ RunTime:0.0000s ]
+
+[ 2015-09-22T15:58:15+08:00 ] 127.0.0.1 /jianshen/Home/Index/97
+ERR: 非法操作:97
+
+[ 2015-09-22T15:59:03+08:00 ] 127.0.0.1 /jianshen/Home/Index/Array
+ERR: 非法操作:Array
+
+[ 2015-09-22T16:00:32+08:00 ] 127.0.0.1 /jianshen/Home/Index/Array
+ERR: 非法操作:Array
+
+[ 2015-09-22T16:01:21+08:00 ] 127.0.0.1 /jianshen/Home/Index/%7Bget_cover($data['pic_id'])%7D
+ERR: 非法操作:{get_cover($data['pic_id'])}
+
+[ 2015-09-22T16:01:27+08:00 ] 127.0.0.1 /jianshen/Home/Index/Array
+ERR: 非法操作:Array
+
+[ 2015-09-22T16:01:54+08:00 ] 127.0.0.1 /jianshen/Home/Index/97
+ERR: 非法操作:97
+
+[ 2015-09-22T16:02:18+08:00 ] 127.0.0.1 /jianshen/Home/Index/97
+ERR: 非法操作:97
+
+[ 2015-09-22T16:02:27+08:00 ] 127.0.0.1 /jianshen/Home/Index/97
+ERR: 非法操作:97
+
+[ 2015-09-22T16:03:28+08:00 ] 127.0.0.1 /jianshen/Home/Index/97
+ERR: 非法操作:97
+
+[ 2015-09-22T16:24:58+08:00 ] 127.0.0.1 /jianshen/Home/Document/show/id/32.html
+ERR: 无法加载控制器:Document
+
+[ 2015-09-22T16:31:40+08:00 ] 127.0.0.1 /jianshen/Home/Document/show/id/32.html
+ERR: 模板不存在:./Application/Home/View/Document/show.html
+
+[ 2015-09-22T16:52:26+08:00 ] 127.0.0.1 /jianshen/Home/Document/detail/id/32.html
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'jianshen.js_' doesn't exist
+
+[ 2015-09-22T17:00:28+08:00 ] 127.0.0.1 /jianshen/Home/Document/index/cate_id/54.html
+ERR: 非法操作:index
+
+[ 2015-09-22T17:02:49+08:00 ] 127.0.0.1 /jianshen/Home/Document/index/cate_id/54.html
+ERR: Think\Controller:lists方法不存在！
+
+[ 2015-09-22T17:32:22+08:00 ] 127.0.0.1 /jianshen/Home/Index/advisory.html
+ERR: 模板不存在:./Application/Home/View/Index/advisory.html
+

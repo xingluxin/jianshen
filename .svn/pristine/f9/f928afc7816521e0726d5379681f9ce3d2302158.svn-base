@@ -1,0 +1,19 @@
+<div class="top_t">
+   <dl>
+      <dt><img src="__IMG__/6_03.png"></dt>
+      <dd>{:get_nickname(is_login())}</dd>
+      <dd>最后登录：{:get_lastlogin(is_login())}</dd>
+   </dl>
+   <ul class="ul1 clear">
+     <li class="none"><span>今日收益</span><span>0.5</span></li>
+     <li><span>昨日收益</span><span>0</span></li>
+     <li><span>账户余额</span><span>{:getMoney(is_login())}</span></li>
+     <li><span>总收益</span><span>20.5</span></li>
+   </ul>
+</div>
+<ul class="ul2 clear">
+   <li><img src="__IMG__/5_06.png"><a href="{:U('User/index')}">会员中心</a></li>
+   <li><img src="__IMG__/5_12.png"><a href="{:U('Pay/excharge')}">领取收益</a></li>
+   <li><img src="__IMG__/5_09.png"><a href="{:U('User/show',array('id'=>33))}">赚钱攻略</a></li>
+   <li><img src="__IMG__/5_15.png"><a href="{:U('User/show',array('id'=>34))}">受益规则</a></li>
+</ul>

@@ -1,0 +1,38 @@
+<div class="xiangs clear">
+	<a href="#"><img src="__IMG__/jies_23.png" ></a>
+</div><!--xiangs end-->
+<p class="p5">技术支持  久九快服</p>
+<div class="bottom">
+	<a href="{:U('Index/index')}"><img src="__IMG__/1_13.png"></a>
+	<a href="#"><img src="__IMG__/1_10.png" class="zhong"></a>
+	<span class="last"><img src="__IMG__/1_16.png" class="img33"></span>
+	<div class="tann">
+		<div class="tann2">
+			<img src="__IMG__/9_03.png" class="imgs1">
+			<dl>
+			    <dt><img src="__IMG__/6_03.png"></dt>
+			    <dd>{:get_nickname(is_login())}</dd>
+			    <dd></dd>
+			</dl>
+			<ul>
+				<li><img src="__IMG__/9_07.png"><a href="{:U('User/index')}">个人中心</a></li>
+			    <li><img src="__IMG__/9_07.png"><a href="{:U('Pay/wallet')}">我的钱包</a></li>
+			    <li><img src="__IMG__/9_11.png"><a href="{:U('User/feedback')}">我的意见、反馈</a></li>
+			    <li><img src="__IMG__/9_14.png"><a href="#">我的对比</a></li>
+			    <li><img src="__IMG__/9_17.png"><a href="#">我的相册</a></li>
+			    <li><img src="__IMG__/9_20.png"><a href="#">我的饮食计划</a></li>
+			    <li><img src="__IMG__/9_24.png"><a href="#">我的健身计划</a></li> 
+			    <li><img src="__IMG__/9_27.png"><a href="{:U('User/edit')}">我的资料</a></li>
+			</ul>
+       </div>
+	</div>
+</div><!--bottom end-->
+      
+
+
+<include file="Public/var"/>
+<block name="script"></block> <!-- 用于加载js代码 -->
+
+<div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
+	<block name="hidden"></block>
+</div>

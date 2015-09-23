@@ -1,0 +1,10 @@
+[ 2015-09-23T10:10:59+08:00 ] 127.0.0.1 /jianshen/Home/User/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Home\Controller\UserController::show() should be compatible with Think\Controller::show($content, $charset = '', $contentType = '', $prefix = '') D:\htdocs\jianshen\Application\Home\Controller\UserController.class.php 第 5 行.
+NOTIC: [8] Undefined index: lite D:\htdocs\jianshen\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `js_member` [ RunTime:0.0156s ]
+SQL: SELECT `uid`,`nickname`,`truename`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `js_member` WHERE `uid` = 32 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `js_member` SET `login`=`login`+1,`last_login_time`='1442974259',`last_login_ip`='2130706433' WHERE `uid` = 32 [ RunTime:0.0000s ]
+

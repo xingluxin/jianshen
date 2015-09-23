@@ -1,0 +1,321 @@
+<extend name="Public/base" />
+
+
+<block name="body">
+	<script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+	<!--  文本编辑器    -->
+	<script src="__STATIC__/Ueditor/ueditor.config.js"></script>
+	<script src="__STATIC__/Ueditor/ueditor.all.js"></script>
+	<script src="__STATIC__/Ueditor/lang/zh-cn/zh-cn.js"></script>
+	
+	<div class="main-title cf">
+		<h2>
+		编辑[
+			<volist name="rightNav" id="nav">
+			<a href="{:U('article/index','cate_id='.$nav['id'])}">{$nav.title}</a>
+			<if condition="count($rightNav) gt $i"><i class="ca"></i></if>
+			</volist>
+			<present name="article">：<a href="{:U('article/index','cate_id='.$info['category_id'].'&pid='.$article['id'])}">{$article.title}</a></present>
+			]
+		
+		</h2>
+	</div>
+	
+	<!-- 标签页导航 -->
+<div class="tab-wrap">
+	<ul class="tab-nav nav">
+		<li data-tab="tab1" class="current"><a href="javascript:void(0);">基础</a></li>
+		<li data-tab="tab2" ><a href="javascript:void(0);">扩展</a></li>
+	</ul>
+	<div class="tab-content">
+	<!-- 表单 -->
+	<form id="form" action="{:U('update')}" method="post" class="form-horizontal">
+		
+		 <div id="tab1" class="tab-pane in tab1">
+		 
+		 	<label class="item-label">标题</label>
+		 	<div class="controls">
+		 		<input type="text" class="text input-large" name="title" value="{$data['title']}">
+		 	</div>
+		 	
+		 	
+		 	<if condition="I('cate_id') eq 59">
+			 	<label class="item-label">价格</label>
+			 	<div class="controls">
+			 		<input type="text" class="text input-large" name="money" value="{$data['money']}">
+			 	</div>
+		 	</if>
+		 	
+		 	<label class="item-label">摘要</label>
+		 	<div class="controls">
+		 		<label class="textarea input-large">
+					<textarea name="description">{$data['description']}</textarea>
+                </label>
+		 	</div>
+		 	
+		 	<label class="item-label">内容</label>
+		 	<div class="controls">
+		 		<script id="container" name="content" type="text/plain">{:htmlspecialchars_decode($data['content'])}</script>
+				<!-- 实例化编辑器 -->
+				<script type="text/javascript">
+					var ue = UE.getEditor('container', {
+						initialFrameWidth:780,
+						initialFrameHeight:500
+					});
+				</script>
+		 	</div>
+		 	
+		 	
+		</div>
+		 
+		<div id="tab2" class="tab-pane tab2">
+		
+			<label class="item-label">推荐位</label>
+		 	<div class="controls">
+		 		<foreach name="position" item="vo" >
+		 			<label class="checkbox">
+                    	<input type="checkbox" value="{$key}" name="position[]" <in name="key" value="$data['position']">checked="checked"</in>>{$vo}
+                    </label>
+		 		</foreach>
+		 	</div>
+		 
+		 	<label class="item-label">缩略图<span class="check-tips">（仅可上传1张）</span></label>
+		 	<div class="controls">
+				<input type="file" id="upload_pic">
+				<input type="hidden" name="pic_id" id="cover_pic" value="{$data['pic_id']}"/>
+				<div class="upload-img-box">
+					<notempty name="data['pic_id']">
+						<div class="upload-pre-item"><img src="{$data['pic_id']|get_cover='path'}"/></div>
+					</notempty>
+				</div>
+			</div>
+			<script type="text/javascript">
+			//上传图片
+			/* 初始化上传插件 */
+			$("#upload_pic").uploadify({
+				"height"          : 30,
+				"swf"             : "__STATIC__/uploadify/uploadify.swf",
+				"fileObjName"     : "download",
+				"buttonText"      : "上传图片",
+				"uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+				"width"           : 120,
+				'removeTimeout'	  : 1,
+				'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
+				"onUploadSuccess" : uploadPic,
+				'onFallback' : function() {
+					 alert('未检测到兼容版本的Flash.');
+				}
+			});
+			function uploadPic(file, data){
+		    	var data = $.parseJSON(data);
+		    	var src = '';
+		        if(data.status){
+		        	$("#cover_pic").val(data.id);
+		        	src = data.url || '__ROOT__' + data.path
+		        	$("#cover_pic").parent().find('.upload-img-box').html(
+		        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
+		        	);
+		        } else {
+		        	updateAlert(data.info);
+		        	setTimeout(function(){
+		                $('#top-alert').find('button').click();
+		                $(that).removeClass('disabled').prop('disabled',false);
+		            },1500);
+		        }
+		    }
+			</script>
+			
+			
+			
+			<label class="item-label">组图<span class="check-tips">（仅可上传1张）</span></label>
+			<php>$pics_id = str2arr($data['pics_id'])</php>
+		 	<div class="controls">
+				<input type="file" id="upload_pic_list">
+				<!-- 保存上传图像的ID区域  -->
+				<div id="cover_picurl_list">
+					<foreach name="pics_id" item="vo" >
+						<input type='hidden' name='pics_id[]' value='{$vo}'>
+					</foreach>
+				</div>
+				<!-- / 保存上传图像的ID区域  -->
+				<!-- 上传图像预览区域   -->
+				<div class="upload-img-box">
+					<notempty name="data['pics_id']">
+						<foreach name="pics_id" item="vo" >
+							<div class="upload-pre-item"><img src="{$vo|get_cover='path'}"/></div>
+						</foreach>
+					</notempty>
+				</div>
+				<!-- / 上传图像预览区域   -->
+			</div>
+			<script type="text/javascript">
+			//上传图片
+			/* 初始化上传插件 */
+			$("#upload_pic_list").uploadify({
+				"height"          : 30,
+				"swf"             : "__STATIC__/uploadify/uploadify.swf",
+				"fileObjName"     : "download",
+				"buttonText"      : "上传组图",
+				"uploader"        : "{:U('File/uploadPicture',array('session_id'=>session_id()))}",
+				"width"           : 120,
+				'removeTimeout'	  : 1,
+				'fileTypeExts'	  : '*.jpg; *.png; *.gif;',
+				'queueSizeLimit'  : 10,
+				'uploadLimit'     : 10,
+				"onUploadSuccess" : uploadPicList,
+				'onFallback' : function() {
+					 alert('未检测到兼容版本的Flash.');
+				}
+			});
+			function uploadPicList(file, data){
+		    	var data = $.parseJSON(data);
+		    	var src = '';
+		        if(data.status){
+		        	$("#cover_picurl_list").append("<input type='hidden' name='pics_id[]' value='"+data.id+"'>");
+		        	src = data.url || '__ROOT__' + data.path
+		        	$("#cover_picurl_list").parent().find('.upload-img-box').append(
+		        		'<div class="upload-pre-item"><img src="' + src + '"/></div>'
+		        	);
+		        } else {
+		        	updateAlert(data.info);
+		        	setTimeout(function(){
+		                $('#top-alert').find('button').click();
+		                $(that).removeClass('disabled').prop('disabled',false);
+		            },1500);
+		        }
+		    }
+			</script>
+			
+			
+			
+			<label class="item-label">附件上传（仅可上传1个）</label>
+		 	<div class="controls">
+				<input type="file" id="upload_file">
+				<input type="hidden" name="file_id" id="cover_file" value="{$data['file_id']}"/>
+				<div class="upload-img-box">
+					<present name="data['file_id']">
+						<div class="upload-pre-file"><span class="upload_icon_all"></span></div>
+					</present>
+				</div>
+			</div>
+			<script type="text/javascript">
+			//上传图片
+			/* 初始化上传插件 */
+			$("#upload_file").uploadify({
+				"height"          : 30,
+				"swf"             : "__STATIC__/uploadify/uploadify.swf",
+				"fileObjName"     : "download",
+				"buttonText"      : "上传附件",
+				"uploader"        : "{:U('File/upload',array('session_id'=>session_id()))}",
+				"width"           : 120,
+				'removeTimeout'	  : 1,
+				"onUploadSuccess" : uploadFile,
+				'onFallback' : function() {
+					 alert('未检测到兼容版本的Flash.');
+				}
+			});
+			function uploadFile(file, data){
+				var data = $.parseJSON(data);
+		        if(data.status){
+		        	
+		        	$("#cover_file").val(data.data);
+		        	src = data.url || '__ROOT__' + data.path
+		        	$("#cover_file").parent().find('.upload-img-box').html(
+		        			"<div class=\"upload-pre-file\"><span class=\"upload_icon_all\"></span>" + data.info + "</div>"
+		        	);
+		        	
+		        } else {
+		        	updateAlert(data.info);
+		        	setTimeout(function(){
+		                $('#top-alert').find('button').click();
+		                $(that).removeClass('disabled').prop('disabled',false);
+		            },1500);
+		        }
+			}
+			</script>
+		 
+		 	<label class="item-label">文章来源</label>
+		 	<div class="controls">
+		 		<input type="text" class="text input-large" name="source" value="{:$data['source']}">
+		 	</div>
+		 	
+		 	<label class="item-label">作者编辑</label>
+		 	<div class="controls">
+		 		<input type="text" class="text input-large" name="author" value="{:$data['author']}">
+		 	</div>
+		 	
+		 	<label class="item-label">跳转连接</label>
+		 	<div class="controls">
+		 		<input type="text" class="text input-large" name="linkurl" value="{:$data['linkurl']}">
+		 	</div>
+		 	
+		 	<label class="item-label">点击量</label>
+		 	<div class="controls">
+		 		<input type="text" class="text input-large" name="hits" value="{:$data['hits']}">
+		 	</div>
+		 	
+		 	<label class="item-label">排序<span class="check-tips">（数越大，越靠前）</span></label>
+		 	<div class="controls">
+		 		<input type="text" class="text input-large" name="orderid" value="{:$data['orderid']}">
+		 	</div>
+		 	
+		 	<label class="item-label">更新时间</label>
+		 	<div class="controls">
+		 		<input type="text" name="update_time" class="text time" value="{$data['update_time']|time_format=###,'Y-m-d H:m:s'}" placeholder="请选择日期" />
+		 	</div>
+		 	
+		 	<label class="item-label">创建时间</label>
+		 	<div class="controls">
+		 		<input type="text" name="create_time" class="text time" value="{$data['create_time']|time_format=###,'Y-m-d H:m:s'}" placeholder="请选择日期" />
+		 	</div>
+		 	
+		 	<label class="item-label">禁用<span class="check-tips">（选择是，前台不显示）</span></label>
+		 	<div class="controls">
+		 		<label class="radio">
+					<input type="radio" name="status" value="0" <eq name="data['status']" value="0">checked</eq> >是
+                </label>
+                <label class="radio">      
+					<input type="radio" name="status" value="1" <eq name="data['status']" value="1">checked</eq> >否
+                </label>
+		 	</div>
+		 	
+
+		</div>
+		
+		<div class="form-item cf">
+			<button class="btn submit-btn ajax-post hidden" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+			<a class="btn btn-return" href="{:U('article/index?cate_id='.$cate_id)}">返 回</a>
+			<input type="hidden" name="id" value="{:I('id')}"/>
+			<input type="hidden" name="category_id" value="{:I('cate_id')}">
+		</div>
+	</form>
+	</div>
+</div>
+</block>
+
+<block name="script">
+<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+
+$('#submit').click(function(){
+	$('#form').submit();
+});
+
+$(function(){
+	
+   
+    $('.time').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii:ss',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    showTab();
+
+});
+</script>
+</block>

@@ -1,0 +1,107 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0">
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):"首页"); ?>-<?php echo C('WEB_SITE_TITLE');?></title>
+<link rel="stylesheet" href="/jianshen/Public/Home/css/style.css" />
+<link rel="stylesheet" href="/jianshen/Public/Home/css/comment.css" />
+<script src="/jianshen/Public/Home/js/jquery-1.8.0.min.js"></script>
+
+</head>
+<body>
+	<div class="box">
+		<!-- 头部 -->
+		<div class="top">
+	<a href="#">LOGO大亨运动</a><span> <b>
+	
+	<?php if(is_login()): ?><a href="<?php echo U('User/index');?>">用户中心</a></b> | <a href="<?php echo U('User/logout');?>"> 退出 </a>
+	<?php else: ?> 
+		<a href="<?php echo U('User/login');?>">登陆</a></b> | <a href="<?php echo U('User/register');?>"> 注册 </a><?php endif; ?>
+	
+	</span>
+</div><!--top end-->
+      
+		<!-- /头部 -->
+	
+	
+		<!-- 主体 -->
+		<div id="top-alert" class="fixed alert alert-error" style="display: none;">
+	<button class="close fixed" style="margin-top: 4px;">&times;</button>
+	<div class="alert-content">这是内容</div>
+</div>
+
+	<h4><img src="/jianshen/Public/Home/images/jies_02.png" style="width:2.8%"><?php echo get_category_title(I('cate_id'));?></h4>
+	
+	<div class="dl">
+		<?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><dl>
+			   <dt><a href="<?php echo U('Document/detail',array('id'=>$data['id']));?>"><img src="<?php echo (get_cover($data['pic_id'],'path')); ?>"></a></dt>
+			   <dd><a href="<?php echo U('Document/detail',array('id'=>$data['id']));?>"><?php echo msubstr($data['title'],0,10);?></a></dd>
+			   <dd class="dd2"><?php echo (time_format($data['update_time'],'Y-m-d H:i')); ?></dd>
+			</dl><?php endforeach; endif; else: echo "" ;endif; ?>
+	</div>
+		
+    <p class="p6 clear" >
+    
+    <?php echo $_page;?>
+	
+
+
+
+		<!-- /主体 -->
+
+		<!-- 底部 -->
+		<div class="xiangs clear">
+	<a href="#"><img src="/jianshen/Public/Home/images/jies_23.png" ></a>
+</div><!--xiangs end-->
+<p class="p5">技术支持  久九快服</p>
+<div class="bottom">
+	<a href="<?php echo U('Index/index');?>"><img src="/jianshen/Public/Home/images/1_13.png"></a>
+	<a href="#"><img src="/jianshen/Public/Home/images/1_10.png" class="zhong"></a>
+	<span class="last"><img src="/jianshen/Public/Home/images/1_16.png" class="img33"></span>
+	<div class="tann">
+		<div class="tann2">
+			<img src="/jianshen/Public/Home/images/9_03.png" class="imgs1">
+			<dl>
+			    <dt><img src="/jianshen/Public/Home/images/6_03.png"></dt>
+			    <dd><?php echo get_nickname(is_login());?></dd>
+			    <dd></dd>
+			</dl>
+			<ul>
+				<li><img src="/jianshen/Public/Home/images/9_07.png"><a href="<?php echo U('User/index');?>">个人中心</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_07.png"><a href="<?php echo U('Pay/wallet');?>">我的钱包</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_11.png"><a href="<?php echo U('User/feedback');?>">我的意见、反馈</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_14.png"><a href="#">我的对比</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_17.png"><a href="#">我的相册</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_20.png"><a href="#">我的饮食计划</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_24.png"><a href="#">我的健身计划</a></li> 
+			    <li><img src="/jianshen/Public/Home/images/9_27.png"><a href="<?php echo U('User/edit');?>">我的资料</a></li>
+			</ul>
+       </div>
+	</div>
+</div><!--bottom end-->
+      
+
+
+<script type="text/javascript">
+(function(){
+	var ThinkPHP = window.Think = {
+		"ROOT"   : "/jianshen", //当前网站地址
+		"APP"    : "/jianshen", //当前项目地址
+		"PUBLIC" : "/jianshen/Public", //项目公共目录地址
+		"DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
+		"MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
+		"VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
+	}
+})();
+</script>
+ <!-- 用于加载js代码 -->
+
+<div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
+	
+</div>
+
+		<!-- /底部 -->
+	</div>
+</body>
+</html>

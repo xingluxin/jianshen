@@ -1,0 +1,21 @@
+<extend name="Base/common"/>
+
+<block name="body">
+	<h4><img src="__IMG__/jies_02.png" style="width:2.8%">{:get_category_title(I('cate_id'))}</h4>
+	
+	<div class="dl">
+		<volist name="list" id="data">
+			<dl>
+			   <dt><a href="{:U('Document/detail',array('id'=>$data['id']))}"><img src="{$data['pic_id']|get_cover='path'}"></a></dt>
+			   <dd><a href="{:U('Document/detail',array('id'=>$data['id']))}">{:msubstr($data['title'],0,10)}</a></dd>
+			   <dd class="dd2">{$data['update_time']|time_format=###,'Y-m-d H:i'}</dd>
+			</dl>
+		</volist>
+	</div>
+		
+    <p class="p6 clear" >
+    
+    {:$_page}
+	
+
+</block>

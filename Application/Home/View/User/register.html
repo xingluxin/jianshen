@@ -1,0 +1,59 @@
+<extend name="Base/common"/>
+
+<block name="body">
+
+<form action="{:U('register')}" method="post" name="form2" class="form2">
+	<div><label>账 号：</label><input type="text" name="username" placeholder="推荐使用邮箱、QQ号、手机号"></div>
+	<div><label>密 码：</label><input type="text" name="password" placeholder="至少6个字符"></div>
+	<div><label>确认密码：</label><input type="text" name="repassword" placeholder="请在输入一次"></div>
+	<div><label>邮箱：</label><input type="text" name="email" placeholder=""></div>
+	<div><label>验证码：</label><input type="text" name="verify" class="input4"><img src="{:U('User/verify')}" style="width:28%" class="verifyimg reloadverify"></div>
+	<p class="p1">注册即视为同意 <a href="#"> 健身用户协议</a></p>
+	<div class="controls Validform_checktip text-warning"></div>
+	<input type="submit" class="input3" value="同意用户协议并注册">
+</form>
+
+<p class="p1 p2">已有账号，直接 <a href="{:U('User/login')}">  登录</a></p>
+
+</block>
+
+<block name="script">
+<script type="text/javascript">
+    	$(document)
+	    	.ajaxStart(function(){
+	    		$("button:submit").addClass("log-in").attr("disabled", true);
+	    	})
+	    	.ajaxStop(function(){
+	    		$("button:submit").removeClass("log-in").attr("disabled", false);
+	    	});
+
+
+    	$("form").submit(function(){
+    		var self = $(this);
+    		$.post(self.attr("action"), self.serialize(), success, "json");
+    		return false;
+
+    		function success(data){
+    			self.find(".Validform_checktip").text("123");
+    			if(data.status){
+    				window.location.href = data.url;
+    			} else {
+    				self.find(".Validform_checktip").text(data.info);
+    				//刷新验证码
+    				$(".reloadverify").click();
+    			}
+    		}
+    	});
+
+		$(function(){
+			var verifyimg = $(".verifyimg").attr("src");
+            $(".reloadverify").click(function(){
+                if( verifyimg.indexOf('?')>0){
+                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+                }else{
+                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+                }
+            });
+		});
+	</script>
+</block>

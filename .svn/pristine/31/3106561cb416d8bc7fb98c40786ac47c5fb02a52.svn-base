@@ -1,0 +1,257 @@
+@charset "utf-8";
+/* CSS Document */
+.box{max-width:640px;min-width:300px;margin:0 auto; overflow:hidden; background:#e8ebee; min-height:800px; position:relative}
+.form1 input{width:95%; margin:0 auto; display:block; margin-top:2%; padding:2% 3%}
+.form1 .input2{ float:left;width:12%}
+.form1 div{ font-size:1em;color:#abb4bc; margin-top:2%}
+.form1 .input3{ border:0; background:#2bb8bc;color:#fff; font-family:'微软雅黑'; font-size:1em}
+.denglu{width:95%; margin:9% auto 5%; overflow:hidden}
+.denglu span img{width:18%; vertical-align:top; margin-right:3%}
+.denglu span{ background:#2bb8bc; float:left;width:48%; font-size:0.8em; padding:2% 3%}
+.denglu span a{color:#fff;}
+.denglu span.span2{ float:right;}
+.p1{width:95%; margin:4% auto; font-size:0.8em;color:#abb4bc}
+.p1 span{ float:right}
+.p1 a{ font-size:1.3em;color:#2bb8bc; text-decoration:underline}
+.bottom{background:#22292c; height:3.5em; position:fixed;bottom:0; width:100%}
+.bottom a img,.bottom span img{width:35%; margin-top:8%; margin-left:30px}
+.bottom span,.bottom a{ float:left;width:30%; height:100%}
+.bottom span.last{ float:right; border-left:1px solid #0d0d0d}
+.bottom a .zhong{ margin-top:10%;}
+/*快速注册*/
+.form2{width:95%; margin:0 auto}
+.form2 label{width:27%; float:left; text-align:right}
+.form2 div{ margin-top:5%; overflow:hidden}
+.form2 div input{ height:2em;width:60%; float:left}
+.form2 div .input4{width:28%;}
+.form2 div img{ float: left; margin-left:3%}
+.form2 .input3{ border:0; background:#2bb8bc;color:#fff; font-family:'微软雅黑'; font-size:1em;width:100%; display:block; height:2.5em}
+.p2{ text-align:right; margin-right:10%}
+/*发布主题*/
+.top { background:#31a4a7; overflow:hidden; font-size:1em; line-height:2em; padding:2% 5%}
+.top a,.top b{color:#fff}
+.top span{ float:right; margin-right:3%}
+.top img{width:10%; float:left; margin-top:1%}
+.p3{color:#31a4a7; line-height:2em; width:95%; margin:0 auto;}
+p.none{ border:0}
+.form3 input,.form3 textarea{ background:none; margin:0 auto; border:0; display:block;}
+.form3 textarea{ height:600px; font-size:1em}
+.bottom2{ background:#dee8eb; overflow:hidden; padding:2% 0}
+.bottom2 img{width:10%; float:right}
+/*产品介绍页*/
+h4{ height:2em; line-height:2em;font-size:1em; margin:5% 0; overflow:hidden}
+h4 img{ float:left; margin-right:3%}
+.pai,.pai2{ margin:5% 0}
+.pai dd{color:#a0a4a4;}
+.pai2 dd{ font-size:1em; line-height:2em}
+.pai2 .dd1{color:#31a4a7;}
+.pai2 .dd3{color:#31a4a7; background:#dee8eb}
+.xiangs{ background:#31a4a7; overflow:hidden;}
+.xiangs img{width:30%; float:right}
+.p5{ background:#282b2d; margin-bottom:17%; text-align:center;color:#4c5151; padding:5% 0}
+.dl dl{ margin-top:4%; overflow:hidden; width:100%}
+.dl dl dt{width:35%; float: left; margin-left:3%}
+.dl dl dd{ font-size:1em; float:left;width:60%; margin:3% 0 0 2%; float:right}
+.dl dl dd.dd2{ font-size:0.8em;color:#aab0b6}
+.p6 { line-height:2.5em; height:2.5em; margin:5% 0}
+.p6 a{ padding:2% 8%; background:#b5b9b9; margin-left:8%;color:#fff; border-radius:8px}
+.p6 a:hover{ background:#2bb8bc;color:#fff}
+.p6 .hover{ background:#2bb8bc;color:#fff}
+.p7{color:#b5b9b9;width:90%; margin:0 auto}
+.form4{ margin:4% 0}
+.form4 input{ border:1px solid #ccc;width:40%; margin-left:5%; line-height:2em; height:2em}
+.form4 .sub{ background:#2bb8bc; border:0;color:#fff}
+/*产品终极页*/
+.top p{ float:right;color:#fff;}
+.jianjie{ width:95%; margin:0 auto; font-size:0.8em;color:#22292c; line-height:2em;}
+.jianjie h2{ font-size:1.4em}
+.jianjie .p7{color:#c9c9c9; margin:3% 0}
+.jianjie span{ margin-left:50%; }
+/*我的健身计划*/
+.x_box{width:95%; margin:4% auto}
+.x_box p{color:#1f8d90; line-height:2em}
+.x_box2{ width:95%; margin: 0 auto}
+.x_box2 h2{ font-size:1.1em;}
+.x_box2 .img2{ width:40%}
+.x_box2 .img3{ width:23%}
+.p8{ text-align:right; width:90%; margin:4% auto; border-top:1px solid #ccc; line-height:2.9em; height:2.9em}
+.p8 a{color:#2bb8bc}
+/*个人中心*/
+.top_t{ background:url(../images/5_03.png) no-repeat center bottom; height:10em; overflow:hidden}
+.top_t dt{width:23%; float:left}
+.top_t dl{width:90%; margin:5% auto 0}
+.top_t dl dd{color:#fff;width:77%; float:right; line-height:2em;}
+.top_t dl dd.dd2{color:#cdebf0; font-size:0.8em}
+.top_t .ul1{width:100%; background:rgba(0,0,0,0.5); overflow:hidden}
+.top_t .ul1 li{width:20%; float:left; margin-left:2%; padding:1em 0; background:url(../images/1.png) no-repeat left center}
+.top_t .ul1 li.none{ background:none}
+.top_t .ul1 li span{ display:block; font-size:0.8em; text-align:center;color:#cdebf0}
+.ul2{ background:#31a4a7; overflow:hidden; padding:1em 0;}
+.ul2 li{width:24%; float:left; line-height:1.5em; margin-left:1%; border-right:1px solid #d1d4d7}
+.ul2 li img{width:35%; float:left}
+.ul2 li a{color:#fff; font-size:0.5em}
+.p9{ text-align:right;width:93%; margin:4% auto 0;color:#1f8d90}
+.p9 a{color:#1f8d90}
+.color{ background:#d3d6d9; overflow:hidden;padding-bottom:30%}
+.p10{color:#222; width:93%; margin:3% auto 0; font-size:1.4em}
+.p11{ font-size:1.2em;text-decoration:underline; text-align:right; width:90%; margin:5% auto}
+.p11 a{color:#2bb8bc; }
+.p12{ background:#2bb8bc; width:90%; margin:0 auto 32%; text-align:center; padding:4% 0;border-radius:8px}
+.p12 a{color:#fff; font-size:1.2em;}
+.form6 textarea{width:80%; margin:1.3em auto; display:block; height:12em; font-size:1em;color:#c9c9c9; line-height:2em}
+.form6 .sub3{ background:#2bb8bc; width:85%; margin:0 auto; display:block; line-height:2.5em; border:0;color:#fff; font-size:1em; }
+.color ul li{width:90%; margin:0 auto; border-bottom:1px solid #95989a; overflow:hidden; line-height:4em}
+.color ul li img{width:12%; float:left; margin-top:1.3em}
+.color ul li a{width:85%; float:right; font-size:1em;color:#4b4b4b}
+/*个人中心    修改资料*/
+.form7{width:95%; margin:0 auto}
+.form7 p{line-height:3em; font-size:1em; height:3em}
+.form7 .p13{ border-bottom:1px solid #000; }
+.form7 div{ margin-top:5%}
+.form7 div.xian{ border-bottom:1px solid #000; padding-bottom:1em}
+.form7 div label{width:35%; float:left; text-align:right;height:2em; line-height:2em}
+.form7 div input{ height:2em; line-height:2em;width:60%}
+.form7 .sub4{ background:#2bb8bc;width:95%; margin:0 auto; border:0;color:#fff;font-family:'微软雅黑';}
+.form7 .p14{ line-height:2em; height:6em; margin:5% 0 0 0; padding:0; font-size:1em;color:#2bb8bc;}
+.form7 .p14 img{width:6%; float:left}
+.form7 .p15{color:#9ea4a8; text-align:center; margin-top:5%}
+/*我的钱包*/
+.zhang{ width:90%; margin:5% auto; font-size:1em}
+.chong{width:90%; margin:20% auto 0; border-bottom:1px solid #000; line-height:3em}
+.chong span{ float:right}
+.p16{width:90%; margin:5% auto 0; overflow:hidden;}
+.p16 a{ width:25%; float:left; text-align:center}
+.p17{width:90%; margin:5% auto; background:#2bb8bc; line-height:2.5em; height:2.5em; text-align:center; font-size:1.2em;border-radius:8px}
+.p17 a{color:#fff;}
+/*体侧标*/
+.aa1{text-align:left; margin-left:30%}
+.h4{ margin:5% 0}
+.mzs{ background:#dee8eb;width:100%; padding:5%; font-size:1em; line-height:2em}
+/*我的相册*/
+.p7 a{ float:right; text-decoration:underline;color:#2bb8bc} 
+h4 a{ float:right;width:20%; background:#2bb8bc;color:#fff; text-align:center; margin-right:5%}
+.zhao{width:98%; margin:0 auto}
+.zhaop{width:44%; float:left; margin:0% 0 5% 3%}
+.zhaop dd{ font-size:0.8em}
+/*支付中心*/
+.p18{width:90%; margin:5% auto; font-size:1em;color:#222}
+.p18 span{ margin-left:4%; font-size:0.9em;color:#2bb8bc}
+.p19 img{ width:8%; float:left}
+.p19{ font-size:0.8em;color:#a5aaaa; line-height:2em}
+.p19 span{ font-size:1em;color:#63696b}
+.p20{width:100%; margin:5% auto; background:#dee8eb;color:#2bb8bc; padding:5% 5%}
+.form8 { margin-bottom:5%; overflow:hidden}
+.form8 input{ float:right;}
+.sub6{ background:#2bb8bc; width:100%; border:0;color:#fff; line-height:2.5em; height:2.5em; display:block; margin:0 auto;}
+.dl8{width:97%; overflow:hidden; margin:0 auto}
+.dl8 dt{width:24%; float:left}
+.dl8 dd{width:65%; float:left; margin-top:4%;color:#6b8187}
+.dl8 .dd2{ font-size:0.8em}
+.y0{ line-height:2.4em;width:97%; margin:0 auto}
+.y1{ font-size:0.8em; line-height:2em; padding:0 3%}
+.img7{width:93%; margin:0 auto; display:block}
+.p21{width:90%; margin:0 auto; border:1px solid #ccc; background:#fff;}
+/*论坛终极页*/
+.p21_img{width:12%}
+.p21 input{ line-height:1.8em; height:1.8em; border:0;width:46%}
+.p21 span{ color:#a8b1b4; font-size:0.8em; float:right; line-height:2.3em; height:2.3em; margin-right:3%}
+.dl9{width:90%; margin:0 auto}
+.dl9 dl{width:100%; overflow:hidden; padding:2% 0; border-bottom:1px solid #c7c7c7}
+.dl9 dl dt{width:20%; float:left}
+.dl9 dl .dd1{color:#6b8187}
+.dl9 dl .dd1 span{ float:right;color:#a8b1b4}
+.dl9 dl dd{ line-height:1.5em;width:75%; float:right; font-size:1em;}
+/*精华帖子*/
+.conter5{overflow:hidden}
+.conter5 dl{padding:2% 0; margin:0 auto; overflow:hidden}
+.conter5 dl dt{width:24%; float:left;margin-left:2%}
+.conter5 dl dd{width:73%; float:right;margin-top:2%;color:#a9b0b6}
+.conter5 dl .dd1{font-size:1.1em;margin:4% 0;}
+.conter5 dl .dd2{ font-size:0.8em}
+.conter5 .img{width:100%; margin:0 auto; overflow:hidden;padding:0 0 3% 0;border-bottom:1px solid #ccc; overflow:hidden}
+.conter5 .img img{width:30%; float:left;margin-right:1%;margin-left:2%}
+.conter5 dl .dd1 span{width:50%; float:right;margin-right:9%; font-size:0.8em}
+.conter5 dl .dd1 span img{width:20%}
+.p24{ text-align:right;width:90%; margin:0 auto; line-height:3em}
+.p24 a{color:#2bb8bc; text-decoration:underline}
+/*首页*/
+.dingw{ position:relative;width:100%;}
+.dingw p{ position:absolute;bottom:0; left:0; background:rgba(0,0,0,0.5); width:100%; text-align:center; line-height:3em; height:3em;color:#fff;}
+.dingw p span{color:#2bb8bc}
+.qiehuan{ background:#31a4a7; height:4em; overflow:hidden}
+.qiehuan .ul3{ border:2px solid #fff;border-radius:8px;width:90%; margin:3% auto 0; overflow:hidden; line-height:2.5em; height:2.5em}
+.qiehuan .ul3 li{ float:left;width:50%; text-align:center;color:#fff;}
+.qiehuan .ul3 li.bg{ background:#fff;color:#2bb8bc}
+.conter5 .top_p2{ margin:3% 0}
+.conter5 .top_p2 img{width:2%; float:left}
+.conter5 .top_p2 a{ padding:0 2%; font-size:0.8em;color:#31a4a7}
+.conter5 .top_p2 span{ background:#2bb8bc;color:#fff; float:right; padding:1% 3%; font-size:0.8em}
+.conter5 .ul4{width:98%; margin:0 auto; overflow:hidden}
+.conter5 .ul4 li{width:100%; line-height:3em; border-bottom:1px solid #ccc}
+.conter5 .ul4 li a{width:85%; float:right; font-size:0.8em; white-space:nowrap; overflow:hidden}
+.conter5 .ul4 li span{width:13%; border:1px solid #2bb8bc; font-size:0.8em; padding:1% 3%;border-radius:8px}
+.dlxian dl{ border-bottom:1px solid #ccc;}
+.ul7{width:100%; overflow:hidden; background:#2bb8bc; line-height:4em; margin:0 0 2% 0}
+.ul7 li{ float:left; width:33%; text-align:center; border-right:4px solid #31a4a7}
+.ul7 li a{color:#fff;}
+.ul7 li.none{ border:0}
+/*体侧数据表*/
+.jia{ background:#2bb8bc;overflow:hidden; padding:2% 0; margin-bottom:3%}
+.one{background:#1ba8ac; width:31%; float:left; margin-left:2%; padding:2% 2%; height:12em; border:1px solid 2bb8bc; overflow:hidden; margin-bottom:4%}
+.one .pp1{ border-bottom:1px solid #2bb8bc;color:#fff}
+.one p{ font-size:1em; line-height:2em}
+.one .pp2{ font-size:1.1em;color:#fff;}
+.one .pp3{ font-size:0.5em;color:#fff}
+.one:hover{ border:1px solid #fff}
+.one:hover .pp1{ border-bottom:1px solid #fff}
+.pp4{ background:#1ba8ac;width:95%;margin:0 auto; line-height:2.5em;color:#fff; padding-left:4%}
+.pp4 span{ background:#2bb8bc; padding:1% 4%;color:#fff; margin-left:4%}
+.pp4 span.one2{ margin-left:30%}
+h4 span{color:#2bb8bc}
+.center2 div{ line-height:2em; padding:2%; margin:0 auto; font-size:0.9em;color:#1f8d90}
+.center2 div span{ float:right;color:#22292c}
+.center3{ background:#dee8eb; overflow:hidden; padding:2% 0}
+.center3 img{ float:left;width:20%; margin-left:10%}
+.hh4{ height:4em}
+.center6 div{ line-height:2.5em; height:2.5em; padding:0 2%;color:#1f8d90; font-size:0.9em}
+.center6 div span{ float:right;color:#22292c}
+.center6 div span input{ vertical-align:middle;}
+.center6 div.none2{ clear:both; height:8em;width:96%; margin:0 auto}
+.center6 div.none2 label{color:#22292c; font-size:1em}
+.center6 div.none2 textarea{ display:block;width:100%; margin:0 auto; background:#dee8eb; border:0; height:5em;color:#9ecccd; font-size:1em; padding:2%;}
+h4 b{ font-size:0.8em;color:#666} 
+.center6 div.none{ background:0; min-height:6em}
+.center6 div.none a{ margin-left:5%;color:#2bb8bc}
+.center6 .pp5{color:#2bb8bc; font-size:0.8em; margin-top:0.6em}
+.center6 .pp5 img{width:6%; vertical-align:middle}
+.center6 div.none .pp5 input{ vertical-align:middle; margin-right:5%}
+.center6 div.none .input6{ border:0; background:0;color:#2bb8bc; font-size:0.8em; vertical-align:middle;width:30%}
+.center6 div.none3{ height:10em !important}
+.center6 div.none3 .pp6{width:50%; float:left}
+.center6 div.none3 .pp6 input{ vertical-align:middle}
+.center6 .hh5{ margin-top:2em}
+.center6 .sub{width:90%; margin:5% auto; height:2em; line-height:2em; background:#2bb8bc; border:0;color:#fff; font-size:1em;border-radius:8px; display:block}
+/*点击弹出购买框*/
+.goum2{width:94%; margin:0 auto; background:#fff; padding:4%; overflow:hidden; display:none}
+h6{ font-size:1em;margin:0; padding:0;}
+h6 img{width:10%; vertical-align:middle}
+.goum2 form{ margin:0; padding:0;}
+.goum2 form div{ margin-top:3%; line-height:2em;}
+.goum2 form div input{ float:right;width:20%; vertical-align:middle; margin-top:3%}
+.goum2 form div label{width:80%; float:left; white-space:nowrap; overflow:hidden}
+.goum2 form div:hover{color:#2bb8bc}
+
+.tan2{width:97%; border:0.3em solid #087477; background:#31a4a7; position:relative; top:6%; left:2%}
+.tan{ background:rgba(0,0,0,0.5); position:absolute; top:0;left:0;width:100%; height:100%; display:none;}
+.tan2 a{color:#fff}
+.tan2 div,.tan2 span{color:#fff !important}
+.imgs{width:15%; position:absolute;top:0;right:0}
+.tann{ position:relative;width:100%; background:rgba(0,0,0,0.5); height:100%}
+.tann2{ background:#151e1e;width:70%; position:absolute;bottom:3.5em;right:0; padding-bottom:4%;}
+.tann2 .imgs1{width:16%}
+.tann2 dl{width:96%; margin:4% auto; overflow:hidden}
+.tann2 dl dt{width:30%; float:left}
+.tann2 dl dd{ font-size:0.8em; margin:4% 0;color:#7a7a7a}
+.tann2 ul li{width:90%; margin:0 auto; border-bottom:1px solid #95989a; overflow:hidden; line-height:3em}
+.tann2 ul li img{width:12%; float:left; margin-top:1em}
+.tann2 ul li a{width:85%; float:right; font-size:1em;color:#7a7a7a}

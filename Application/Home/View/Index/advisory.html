@@ -1,0 +1,44 @@
+<extend name="Base/common"/>
+
+<block name="body">
+
+		
+	<div class="jianjie">
+		
+		<h2>{:$row['title']}</h2>
+		<p class="p7">{$row['update_time']|time_format=###,'Y-m-d H:i'} {:$row['source']}</p>
+		<div class="jian">{:htmlspecialchars_decode($row['content'])}</div>
+		<p class="p7">阅读{:$row['hits']}<span></p>
+		
+	</div><!--jianjie end-->
+
+</block>
+
+<block name="script">
+	<script type="text/javascript">
+    	$(document)
+	    	.ajaxStart(function(){
+	    		$("button:submit").addClass("log-in").attr("disabled", true);
+	    	})
+	    	.ajaxStop(function(){
+	    		$("button:submit").removeClass("log-in").attr("disabled", false);
+	    	});
+
+
+    	$("form").submit(function(){
+    		var self = $(this);
+    		$.post(self.attr("action"), self.serialize(), success, "json");
+    		return false;
+
+    		function success(data){
+    			if(data.status){
+    				window.location.href = data.url;
+    			} else {
+    				self.find(".Validform_checktip").text(data.info);
+    			}
+    		}
+    	});
+
+		
+	</script>
+</block>

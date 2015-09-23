@@ -1,0 +1,129 @@
+<extend name="Public/base" />
+
+
+<block name="body">
+	
+
+<div class="tab-wrap">
+	<ul class="tab-nav nav">
+		<li data-tab="tab1" class="current"><a href="javascript:void(0);">基础</a></li>
+		<li data-tab="tab2" ><a href="javascript:void(0);">扩展</a></li>
+	</ul>
+	
+	<div class="tab-content">
+	<!-- 表单 -->
+	<form id="form" action="{:U('view')}" method="post" class="form-horizontal">
+		
+		<div id="tab1" class="tab-pane in tab1">
+		
+			<div class="form-item">
+	            <label class="item-label">用户名<span class="check-tips">（用户名会作为默认的昵称）</span></label>
+	            <div class="controls">
+	                <input type="text" class="text input-large" name="username" value="{$row_uc[1]}" readonly>
+	            </div>
+			</div>
+			
+	        <div class="form-item">
+	            <label class="item-label">密码<span class="check-tips">（用户密码不能少于6位）</span></label>
+	            <div class="controls">
+	                <input type="password" class="text input-large" name="password" value="">
+	            </div>
+	        </div>
+	        
+	        <div class="form-item">
+	            <label class="item-label">确认密码</label>
+	            <div class="controls">
+	                <input type="password" class="text input-large" name="repassword" value="">
+	            </div>
+	        </div>
+	        
+	        <div class="form-item">
+	            <label class="item-label">邮箱<span class="check-tips">（用户邮箱，用于找回密码等安全操作）</span></label>
+	            <div class="controls">
+	                <input type="text" class="text input-large" name="email" value="{$row_uc[2]}">
+	            </div>
+	        </div>
+	        
+	         <div class="form-item">
+	            <label class="item-label">手机<span class="check-tips"></span></label>
+	            <div class="controls">
+	                <input type="text" class="text input-large" name="mobile" value="{$row_uc[3]}">
+	            </div>
+	        </div>
+		 
+		 	
+		</div>
+		 
+		<div id="tab2" class="tab-pane tab2">
+			<div class="form-item">
+	            <label class="item-label">昵称<span class="check-tips"></span></label>
+	            <div class="controls">
+	                <input type="text" class="text input-large" name="nickname" value="{$row['nickname']}">
+	            </div>
+	        </div>
+	        
+	        <div class="form-item">
+	            <label class="item-label">真实姓名<span class="check-tips"></span></label>
+	            <div class="controls">
+	                <input type="text" class="text input-large" name="truename" value="{$row['truename']}">
+	            </div>
+	        </div>
+	        
+	        <div class="form-item">
+	            <label class="item-label">性别<span class="check-tips"></span></label>
+	            <div class="controls">
+	                <label class="radio">
+						<input type="radio" name="sex" value="1" <eq name="row['sex']" value="1">checked</eq> >男
+                	</label>
+                	<label class="radio">      
+						<input type="radio" name="sex" value="2" <eq name="row['sex']" value="2">checked</eq> >女
+                	</label>
+	            </div>
+	        </div>
+	        
+	        <div class="form-item">
+	            <label class="item-label">QQ<span class="check-tips"></span></label>
+	            <div class="controls">
+	                <input type="text" class="text input-large" name="qq" value="{$row['qq']}">
+	            </div>
+	        </div>
+		 	
+
+		</div>
+		
+		<div class="form-item cf">
+			<button class="btn submit-btn ajax-post hidden" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+			<a class="btn btn-return" href="{:U('article/index?cate_id='.$cate_id)}">返 回</a>
+			<input type="hidden" name="uid" value="{:I('id')}"/>
+		</div>
+	</form>
+	</div>
+</div>
+</block>
+
+<block name="script">
+<link href="__STATIC__/datetimepicker/css/datetimepicker.css" rel="stylesheet" type="text/css">
+<php>if(C('COLOR_STYLE')=='blue_color') echo '<link href="__STATIC__/datetimepicker/css/datetimepicker_blue.css" rel="stylesheet" type="text/css">';</php>
+<link href="__STATIC__/datetimepicker/css/dropdown.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="__STATIC__/datetimepicker/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript">
+
+$('#submit').click(function(){
+	$('#form').submit();
+});
+
+$(function(){
+	
+   
+    $('.time').datetimepicker({
+        format: 'yyyy-mm-dd hh:ii:ss',
+        language:"zh-CN",
+        minView:2,
+        autoclose:true
+    });
+    showTab();
+
+});
+</script>
+</block>

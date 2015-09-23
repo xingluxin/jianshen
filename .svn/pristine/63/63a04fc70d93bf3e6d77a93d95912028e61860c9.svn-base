@@ -1,0 +1,175 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0">
+<title><?php echo ((isset($meta_title) && ($meta_title !== ""))?($meta_title):"首页"); ?>-<?php echo C('WEB_SITE_TITLE');?></title>
+<link rel="stylesheet" href="/jianshen/Public/Home/css/style.css" />
+<link rel="stylesheet" href="/jianshen/Public/Home/css/comment.css" />
+<script src="/jianshen/Public/Home/js/jquery-1.8.0.min.js"></script>
+
+</head>
+<body>
+	<div class="box">
+		<!-- 头部 -->
+		<div class="top">
+	<a href="#">LOGO大亨运动</a><span> <b>
+	
+	<?php if(is_login()): ?><a href="<?php echo U('User/index');?>">用户中心</a></b> | <a href="<?php echo U('User/logout');?>"> 退出 </a>
+	<?php else: ?> 
+		<a href="<?php echo U('User/login');?>">登陆</a></b> | <a href="<?php echo U('User/register');?>"> 注册 </a><?php endif; ?>
+	
+	</span>
+</div><!--top end-->
+      
+		<!-- /头部 -->
+	
+	
+		<!-- 主体 -->
+		<div id="top-alert" class="fixed alert alert-error" style="display: none;">
+	<button class="close fixed" style="margin-top: 4px;">&times;</button>
+	<div class="alert-content">这是内容</div>
+</div>
+
+
+		<div class="top_t">
+   <dl>
+      <dt><img src="/jianshen/Public/Home/images/6_03.png"></dt>
+      <dd><?php echo get_nickname(is_login());?></dd>
+      <dd>最后登录：<?php echo get_lastlogin(is_login());?></dd>
+   </dl>
+   <ul class="ul1 clear">
+     <li class="none"><span>今日收益</span><span>0.5</span></li>
+     <li><span>昨日收益</span><span>0</span></li>
+     <li><span>账户余额</span><span><?php echo getMoney(is_login());?></span></li>
+     <li><span>总收益</span><span>20.5</span></li>
+   </ul>
+</div>
+<ul class="ul2 clear">
+   <li><img src="/jianshen/Public/Home/images/5_06.png"><a href="<?php echo U('User/index');?>">会员中心</a></li>
+   <li><img src="/jianshen/Public/Home/images/5_12.png"><a href="<?php echo U('Pay/excharge');?>">领取收益</a></li>
+   <li><img src="/jianshen/Public/Home/images/5_09.png"><a href="<?php echo U('User/show',array('id'=>33));?>">赚钱攻略</a></li>
+   <li><img src="/jianshen/Public/Home/images/5_15.png"><a href="<?php echo U('User/show',array('id'=>34));?>">受益规则</a></li>
+</ul>
+		
+		<div class="color">
+			
+			<p class="p9 clear"><a href="<?php echo U('User/index');?>">个人中心</a> &gt; <a href="<?php echo U('Pay/wallet');?>">我的钱包</a> &gt;<a href="#"><?php echo $meta_title;?></a></p>
+		
+			<form action="<?php echo U('Pay/excharge');?>" class="form7" method="post">
+			
+            	<p>可用余额：<?php echo getMoney(is_login());?>元</p> 
+				<div>
+				    <label>提现金额：</label>
+				    <input type="text" name="money" placeholder="单位（元）">
+				</div>
+				<div>
+					<label>提现方式：</label>
+					<select name=way> 
+						<option value="0">支付宝</option> 
+						<option value="1">银行卡</option> 
+					</select>
+				 </div>
+				 
+				 <div id="platform">
+					 <div>
+					     <label>支付宝账号：</label>
+					     <input type="text" name="account" value="">
+					 </div>
+				 </div>
+				 
+				 <div id="bank">
+					 <div>
+					     <label>卡号：</label>
+					     <input type="text" name="account2" value="">
+					 </div>
+					 <div>
+					     <label>发卡行：</label>
+					     <input type="text" name="bank" placeholder="选择发行卡" >
+					 </div>
+					 <div>
+					     <label>开户网点：</label>
+					     <input type="text" name="branch">
+					 </div>
+				 </div>
+				 
+				 <div>
+				     <label>姓名：</label>
+				     <input type="text" name="truename">
+				 </div>
+				 <div>
+				     <label>手机号：</label>
+				     <input type="text" name="mobile">
+				 </div>
+				 
+	             <p class="p14 clear"><img src="/jianshen/Public/Home/images/ti_03.png">请如实填写所有相关信息，填写错误将会造成打款失
+	败，若选择支付宝提现，则无需填写发卡行，开户网点
+	以及卡号。</p>
+	            <div>
+	            	<input type="hidden" name="pay_item" value="recharge">
+	                <input type="submit" name="4" class="sub4">
+	            </div>
+           		<p class="p15">活动最终解释权归大亨运动所有</p>
+         </form>
+		
+		</div><!--color end-->
+
+
+
+		<!-- /主体 -->
+
+		<!-- 底部 -->
+		<div class="xiangs clear">
+	<a href="#"><img src="/jianshen/Public/Home/images/jies_23.png" ></a>
+</div><!--xiangs end-->
+<p class="p5">技术支持  久九快服</p>
+<div class="bottom">
+	<a href="<?php echo U('Index/index');?>"><img src="/jianshen/Public/Home/images/1_13.png"></a>
+	<a href="#"><img src="/jianshen/Public/Home/images/1_10.png" class="zhong"></a>
+	<span class="last"><img src="/jianshen/Public/Home/images/1_16.png" class="img33"></span>
+	<div class="tann">
+		<div class="tann2">
+			<img src="/jianshen/Public/Home/images/9_03.png" class="imgs1">
+			<dl>
+			    <dt><img src="/jianshen/Public/Home/images/6_03.png"></dt>
+			    <dd><?php echo get_nickname(is_login());?></dd>
+			    <dd></dd>
+			</dl>
+			<ul>
+				<li><img src="/jianshen/Public/Home/images/9_07.png"><a href="<?php echo U('User/index');?>">个人中心</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_07.png"><a href="<?php echo U('Pay/wallet');?>">我的钱包</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_11.png"><a href="<?php echo U('User/feedback');?>">我的意见、反馈</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_14.png"><a href="#">我的对比</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_17.png"><a href="#">我的相册</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_20.png"><a href="#">我的饮食计划</a></li>
+			    <li><img src="/jianshen/Public/Home/images/9_24.png"><a href="#">我的健身计划</a></li> 
+			    <li><img src="/jianshen/Public/Home/images/9_27.png"><a href="<?php echo U('User/edit');?>">我的资料</a></li>
+			</ul>
+       </div>
+	</div>
+</div><!--bottom end-->
+      
+
+
+<script type="text/javascript">
+(function(){
+	var ThinkPHP = window.Think = {
+		"ROOT"   : "/jianshen", //当前网站地址
+		"APP"    : "/jianshen", //当前项目地址
+		"PUBLIC" : "/jianshen/Public", //项目公共目录地址
+		"DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
+		"MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
+		"VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
+	}
+})();
+</script>
+ <!-- 用于加载js代码 -->
+
+<div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
+	
+</div>
+
+		<!-- /底部 -->
+	</div>
+</body>
+</html>

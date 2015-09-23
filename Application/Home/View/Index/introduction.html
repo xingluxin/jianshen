@@ -1,0 +1,25 @@
+<extend name="Base/common"/>
+
+<block name="body">
+
+	<h4><img src="__IMG__/jies_02.png" style="width:2.8%">套餐介绍</h4>
+	<volist name="list_t" id="vo">
+		<dl class="pai">
+			<dt><img src="{$vo['pic_id']|get_cover='path'}"></dt>
+			<dd>{:$vo['description']}</dd>
+		</dl><!--pai end-->
+	</volist>
+	
+	<h4><img src="__IMG__/jies_02.png" style="width:2.8%">产品介绍</h4>
+	<volist name="list_p" id="vo">
+		<dl class="pai2">
+			<dt><img src="{$vo['pic_id']|get_cover='path'}"></dt>
+			<dd class="dd1">{:$vo['title']} </dd>
+			<dd>{:$vo['description']}</dd>
+			<dd class="dd3">价格  ¥ {:$vo['money']}</dd>
+		</dl>
+	</volist>
+      
+
+</block>
+

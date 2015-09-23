@@ -1,0 +1,70 @@
+<extend name="Base/common"/>
+
+<block name="body">
+
+		<include file="User/top"/>
+		
+		<div class="color">
+			
+			<p class="p9 clear"><a href="{:U('User/index')}">个人中心</a> &gt; <a href="{:U('Pay/wallet')}">我的钱包</a> &gt;<a href="#">{:$meta_title}</a></p>
+		
+			<form action="{:U('Pay/excharge')}" class="form7" method="post">
+			
+            	<p>可用余额：{:getMoney(is_login())}元</p> 
+				<div>
+				    <label>提现金额：</label>
+				    <input type="text" name="money" placeholder="单位（元）">
+				</div>
+				<div>
+					<label>提现方式：</label>
+					<select name=way> 
+						<option value="0">支付宝</option> 
+						<option value="1">银行卡</option> 
+					</select>
+				 </div>
+				 
+				 <div id="platform">
+					 <div>
+					     <label>支付宝账号：</label>
+					     <input type="text" name="account" value="">
+					 </div>
+				 </div>
+				 
+				 <div id="bank">
+					 <div>
+					     <label>卡号：</label>
+					     <input type="text" name="account2" value="">
+					 </div>
+					 <div>
+					     <label>发卡行：</label>
+					     <input type="text" name="bank" placeholder="选择发行卡" >
+					 </div>
+					 <div>
+					     <label>开户网点：</label>
+					     <input type="text" name="branch">
+					 </div>
+				 </div>
+				 
+				 <div>
+				     <label>姓名：</label>
+				     <input type="text" name="truename">
+				 </div>
+				 <div>
+				     <label>手机号：</label>
+				     <input type="text" name="mobile">
+				 </div>
+				 
+	             <p class="p14 clear"><img src="__IMG__/ti_03.png">请如实填写所有相关信息，填写错误将会造成打款失
+	败，若选择支付宝提现，则无需填写发卡行，开户网点
+	以及卡号。</p>
+	            <div>
+	            	<input type="hidden" name="pay_item" value="recharge">
+	                <input type="submit" name="4" class="sub4">
+	            </div>
+           		<p class="p15">活动最终解释权归大亨运动所有</p>
+         </form>
+		
+		</div><!--color end-->
+
+</block>
+

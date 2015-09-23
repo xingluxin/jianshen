@@ -1,0 +1,58 @@
+<extend name="Base/common"/>
+
+<block name="body">
+
+<form action="{:U('login')}" method="post" name="form1" class="form1">
+         <input type="text" name="username" placeholder="手机号/微信号/QQ号"  class="input1"> 
+         <input type="text" name="password" placeholder="请妥善保管你的密码"  class="input1"> 
+         <div><input type="checkbox" checked="checked" class="input2">记住密码</div>
+         <div class="controls Validform_checktip text-warning"></div>
+         <input type="submit" value="登陆" class="input3">
+      </form>
+      <div class="denglu">
+           <span><img src="__IMG__/1_03.png"><a href="#">微信号快速登陆</a></span>
+           <span class="span2"><img src="__IMG__/1_05.png"><a href="#">QQ号码快速登陆</a></span>
+      </div>
+<p class="p1 clear"><a href="">忘记密码？</a><span>我还没有账号，点此 <a href="{:U('User/register')}"> 快速注册</a></span></p>
+
+</block>
+
+<block name="script">
+	<script type="text/javascript">
+    	$(document)
+	    	.ajaxStart(function(){
+	    		$("button:submit").addClass("log-in").attr("disabled", true);
+	    	})
+	    	.ajaxStop(function(){
+	    		$("button:submit").removeClass("log-in").attr("disabled", false);
+	    	});
+
+
+    	$("form").submit(function(){
+    		var self = $(this);
+    		$.post(self.attr("action"), self.serialize(), success, "json");
+    		return false;
+
+    		function success(data){
+    			if(data.status){
+    				window.location.href = data.url;
+    			} else {
+    				self.find(".Validform_checktip").text(data.info);
+    				//刷新验证码
+    				$(".reloadverify").click();
+    			}
+    		}
+    	});
+
+		$(function(){
+			var verifyimg = $(".verifyimg").attr("src");
+            $(".reloadverify").click(function(){
+                if( verifyimg.indexOf('?')>0){
+                    $(".verifyimg").attr("src", verifyimg+'&random='+Math.random());
+                }else{
+                    $(".verifyimg").attr("src", verifyimg.replace(/\?.*$/,'')+'?'+Math.random());
+                }
+            });
+		});
+	</script>
+</block>

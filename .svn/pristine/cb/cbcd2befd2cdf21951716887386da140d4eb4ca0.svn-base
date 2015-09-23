@@ -1,0 +1,15 @@
+<extend name="Base/common"/>
+
+<block name="body">
+
+	   <include file="top"/>
+		
+       <div class="color">
+       
+        	{:$info['title']}  
+        	{:htmlspecialchars_decode($info['content'])}  
+		
+       </div><!--color end-->
+
+</block>
+

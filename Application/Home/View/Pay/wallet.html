@@ -1,0 +1,20 @@
+<extend name="Base/common"/>
+
+<block name="body">
+
+		<include file="User/top"/>
+		
+		<div class="color">
+         <p class="p9 clear"><a href="{:U('User/index')}">个人中心</a> > <a href="#">我的钱包</a></p>
+         <p class="zhang">用户名：{:get_username(is_login())}</p>
+         <p class="zhang">用户序号：XKSNFKQ36</p>
+         <p class="zhang">账户余额：{:getMoney(is_login())}元</p>
+         
+         <p class="clear p17"><a href="{:U('Pay/recharge')}">充值</a></p>
+         <p class="clear p17"><a href="{:U('Pay/excharge')}">提现</a></p>
+         <p class="clear p17"><a href="{:U('Pay/getList',array('cat'=>1))}">充值记录</a></p>
+         <p class="clear p17"><a href="{:U('Pay/getList',array('cat'=>2))}">提现记录</a></p>
+       </div><!--color end-->
+
+</block>
+

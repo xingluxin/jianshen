@@ -1,0 +1,223 @@
+[ 2015-09-22T11:01:23+08:00 ] 127.0.0.1 /jianshen/Admin/Public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: lite D:\htdocs\jianshen\ThinkPHP\Library\Think\Db.class.php 第 37 行.
+SQL: SHOW COLUMNS FROM `js_member` [ RunTime:0.0020s ]
+SQL: SELECT `uid`,`nickname`,`truename`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `js_member` WHERE `uid` = 1 LIMIT 1   [ RunTime:0.0000s ]
+SQL: UPDATE `js_member` SET `login`=`login`+1,`last_login_time`='1442890883',`last_login_ip`='2130706433' WHERE `uid` = 1 [ RunTime:0.0000s ]
+
+[ 2015-09-22T11:07:03+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/payInfo.html
+ERR: 无法加载控制器:Pay
+
+[ 2015-09-22T11:08:51+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/payInfo.html
+ERR: 模板不存在:./Application/Admin/View/Pay/payInfo.html
+
+[ 2015-09-22T11:15:55+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/payInfo.html
+ERR: 非法操作:payInfo
+
+[ 2015-09-22T11:16:02+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/payInfo.html
+ERR: 非法操作:payInfo
+
+[ 2015-09-22T11:16:03+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/payInfo/pay_item/recharge.html
+ERR: 非法操作:payInfo
+
+[ 2015-09-22T11:16:04+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/payInfo.html
+ERR: 非法操作:payInfo
+
+[ 2015-09-22T11:16:04+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/payInfo/pay_item/recharge.html
+ERR: 非法操作:payInfo
+
+[ 2015-09-22T11:16:05+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/payInfo.html
+ERR: 非法操作:payInfo
+
+[ 2015-09-22T11:16:05+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/payInfo/pay_item/recharge.html
+ERR: 非法操作:payInfo
+
+[ 2015-09-22T11:16:06+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/payInfo.html
+ERR: 非法操作:payInfo
+
+[ 2015-09-22T11:36:31+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/setStatus/status/4.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+
+[ 2015-09-22T11:37:19+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/setStatus/status/4.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_document` [ RunTime:0.0160s ]
+SQL: DELETE FROM `js_document` WHERE `id` IN ('41') [ RunTime:0.0000s ]
+
+[ 2015-09-22T11:37:41+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/setStatus/status/4.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_pay` [ RunTime:0.0020s ]
+SQL: DELETE FROM `js_pay` WHERE `id` IN ('41') [ RunTime:0.0000s ]
+
+[ 2015-09-22T13:31:42+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/excharge.html
+ERR: 非法操作:excharge
+
+[ 2015-09-22T13:48:55+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/excharge.html
+ERR: 非法操作:excharge
+
+[ 2015-09-22T13:49:39+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/excharge.html
+ERR: 模板不存在:./Application/Admin/View/Pay/excharge.html
+
+[ 2015-09-22T13:54:54+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/setStatus/status/4.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_pay` [ RunTime:0.0020s ]
+SQL: DELETE FROM `js_pay` WHERE `id` IN ('2') [ RunTime:0.0010s ]
+
+[ 2015-09-22T13:56:09+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/setStatus/status/4/model/excharge.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `js_pay` [ RunTime:0.0020s ]
+SQL: DELETE FROM `js_pay` WHERE `id` IN ('2') [ RunTime:0.0000s ]
+
+[ 2015-09-22T13:57:03+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/setStatus/status/4/model/excharge.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_pay` [ RunTime:0.0020s ]
+SQL: DELETE FROM `js_pay` WHERE `id` IN ('2') [ RunTime:0.0010s ]
+
+[ 2015-09-22T13:57:29+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/setStatus/status/4/model/excharge.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_excharge` [ RunTime:0.0020s ]
+SQL: DELETE FROM `js_excharge` WHERE `id` IN ('2') [ RunTime:0.0010s ]
+
+[ 2015-09-22T14:08:08+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/excharge_show/id/3.html
+ERR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'jianshen.js_exchage' doesn't exist
+
+[ 2015-09-22T15:03:46+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/buy.html
+ERR: 非法操作:buy
+
+[ 2015-09-22T15:27:51+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:update
+NOTIC: [8] Use of undefined constant ONETHINK_VERSION - assumed 'ONETHINK_VERSION' D:\htdocs\jianshen\Application\Admin\View\Public\exception.html 第 50 行.
+
+[ 2015-09-22T15:27:53+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+ERR: 非法操作:update
+NOTIC: [8] Use of undefined constant ONETHINK_VERSION - assumed 'ONETHINK_VERSION' D:\htdocs\jianshen\Application\Admin\View\Public\exception.html 第 50 行.
+
+[ 2015-09-22T15:28:32+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:update
+NOTIC: [8] Use of undefined constant ONETHINK_VERSION - assumed 'ONETHINK_VERSION' D:\htdocs\jianshen\Application\Admin\View\Public\exception.html 第 50 行.
+
+[ 2015-09-22T15:28:35+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+ERR: 非法操作:update
+NOTIC: [8] Use of undefined constant ONETHINK_VERSION - assumed 'ONETHINK_VERSION' D:\htdocs\jianshen\Application\Admin\View\Public\exception.html 第 50 行.
+
+[ 2015-09-22T15:28:51+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/excharge_show.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `js_excharge` [ RunTime:0.0020s ]
+SQL: INSERT INTO `js_excharge` (`status`) VALUES ('0') [ RunTime:0.0010s ]
+
+[ 2015-09-22T15:29:09+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/excharge_show.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_excharge` [ RunTime:0.0040s ]
+SQL: INSERT INTO `js_excharge` (`status`) VALUES ('0') [ RunTime:0.0000s ]
+
+[ 2015-09-22T15:29:13+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/excharge_show.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_excharge` [ RunTime:0.0040s ]
+SQL: INSERT INTO `js_excharge` (`status`) VALUES ('1') [ RunTime:0.0010s ]
+
+[ 2015-09-22T15:30:20+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/excharge_show.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `js_excharge` [ RunTime:0.0030s ]
+SQL: INSERT INTO `js_excharge` (`status`) VALUES ('0') [ RunTime:0.0000s ]
+
+[ 2015-09-22T15:30:24+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/excharge_show.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_excharge` [ RunTime:0.0020s ]
+SQL: INSERT INTO `js_excharge` (`status`) VALUES ('1') [ RunTime:0.0000s ]
+
+[ 2015-09-22T15:30:38+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/excharge_show.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `js_excharge` [ RunTime:0.0020s ]
+SQL: INSERT INTO `js_excharge` (`status`) VALUES ('1') [ RunTime:0.0000s ]
+
+[ 2015-09-22T15:31:39+08:00 ] 127.0.0.1 /jianshen/Admin/Pay/excharge_show.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_excharge` [ RunTime:0.0030s ]
+SQL: UPDATE `js_excharge` SET `status`='1' WHERE `id` = 9 [ RunTime:0.0000s ]
+
+[ 2015-09-22T15:58:12+08:00 ] 127.0.0.1 /jianshen/Admin/Article/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_document` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: position D:\htdocs\jianshen\Application\Admin\Model\DocumentModel.class.php 第 71 行.
+SQL: UPDATE `js_document` SET `title`='44',`description`='44',`pic_id`='97',`pics_id`='',`file_id`='0',`source`='',`author`='',`linkurl`='',`hits`='0',`orderid`='0',`update_time`='1442801399',`create_time`='1442801399',`status`='1',`category_id`='54',`content`='&lt;p&gt;44&lt;/p&gt;' WHERE `id` = 32 [ RunTime:0.0010s ]
+
+[ 2015-09-22T17:21:51+08:00 ] 127.0.0.1 /jianshen/Admin/Category/add.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_category` [ RunTime:0.0050s ]
+NOTIC: [2] Missing argument 1 for arr2str() D:\htdocs\jianshen\Application\Common\Common\function.php 第 393 行.
+NOTIC: [8] Undefined variable: arr D:\htdocs\jianshen\Application\Common\Common\function.php 第 394 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\htdocs\jianshen\Application\Common\Common\function.php 第 394 行.
+NOTIC: [2] Missing argument 1 for arr2str() D:\htdocs\jianshen\Application\Common\Common\function.php 第 393 行.
+NOTIC: [8] Undefined variable: arr D:\htdocs\jianshen\Application\Common\Common\function.php 第 394 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\htdocs\jianshen\Application\Common\Common\function.php 第 394 行.
+NOTIC: [2] Missing argument 1 for arr2str() D:\htdocs\jianshen\Application\Common\Common\function.php 第 393 行.
+NOTIC: [8] Undefined variable: arr D:\htdocs\jianshen\Application\Common\Common\function.php 第 394 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\htdocs\jianshen\Application\Common\Common\function.php 第 394 行.
+NOTIC: [2] Missing argument 1 for arr2str() D:\htdocs\jianshen\Application\Common\Common\function.php 第 393 行.
+NOTIC: [8] Undefined variable: arr D:\htdocs\jianshen\Application\Common\Common\function.php 第 394 行.
+NOTIC: [2] implode(): Invalid arguments passed D:\htdocs\jianshen\Application\Common\Common\function.php 第 394 行.
+NOTIC: [2] json_encode() expects at least 1 parameter, 0 given D:\htdocs\jianshen\ThinkPHP\Library\Think\Model.class.php 第 1149 行.
+SQL: INSERT INTO `js_category` (`title`,`icon`,`sort`,`meta_title`,`keywords`,`description`,`id`,`pid`,`create_time`,`update_time`,`status`,`allow_publish`) VALUES ('实用防身术','0','0','','','','0','53','1442913711','1442913711','1','1') [ RunTime:0.0000s ]
+
+[ 2015-09-22T17:28:30+08:00 ] 127.0.0.1 /jianshen/Admin/Article/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_document` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: position D:\htdocs\jianshen\Application\Admin\Model\DocumentModel.class.php 第 71 行.
+NOTIC: [8] Undefined index: pics_id D:\htdocs\jianshen\Application\Admin\Model\DocumentModel.class.php 第 77 行.
+SQL: INSERT INTO `js_document` (`title`,`description`,`pic_id`,`file_id`,`keywords`,`source`,`author`,`linkurl`,`hits`,`orderid`,`update_time`,`create_time`,`status`,`id`,`category_id`,`content`,`uid`) VALUES ('资讯','','0','0','','','','','0','0','1442914110','1442914110','1','0','55','&lt;p&gt;电话：111111111&lt;/p&gt;','1') [ RunTime:0.0000s ]
+
+[ 2015-09-22T17:40:29+08:00 ] 127.0.0.1 /jianshen/Admin/Article/update.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `js_document` [ RunTime:0.0030s ]
+NOTIC: [8] Undefined index: position D:\htdocs\jianshen\Application\Admin\Model\DocumentModel.class.php 第 71 行.
+SQL: UPDATE `js_document` SET `title`='咨询',`description`='',`pic_id`='0',`pics_id`='',`file_id`='0',`source`='',`author`='',`linkurl`='',`hits`='0',`orderid`='0',`update_time`='1442912970',`create_time`='1442912970',`status`='1',`category_id`='55',`content`='&lt;p&gt;电话：111111111&lt;/p&gt;' WHERE `id` = 35 [ RunTime:0.0010s ]
+

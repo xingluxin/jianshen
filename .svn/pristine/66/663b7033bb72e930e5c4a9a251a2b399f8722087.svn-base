@@ -1,0 +1,45 @@
+<extend name="Base/common"/>
+
+<block name="body">
+
+	   <include file="top"/>
+		
+       <div class="color">
+          <p class="p9 clear"><a href="{:U('User/index')}">个人中心</a> > <a href="#">意见反馈</a></p>
+          <form action="{:U()}" method="post" class="form6">
+            <textarea class="input4" name="content">你有什么想对我们说的，请您留下您宝贵的意见和建议。</textarea>
+            <div class="controls Validform_checktip text-warning"></div>
+            <input type="submit" class="sub3">
+          </form>
+       </div><!--color end-->
+
+</block>
+
+<block name="script">
+	<script type="text/javascript">
+    	$(document)
+	    	.ajaxStart(function(){
+	    		$("button:submit").addClass("log-in").attr("disabled", true);
+	    	})
+	    	.ajaxStop(function(){
+	    		$("button:submit").removeClass("log-in").attr("disabled", false);
+	    	});
+
+
+    	$("form").submit(function(){
+    		var self = $(this);
+    		$.post(self.attr("action"), self.serialize(), success, "json");
+    		return false;
+
+    		function success(data){
+    			if(data.status){
+    				window.location.href = data.url;
+    			} else {
+    				self.find(".Validform_checktip").text(data.info);
+    			}
+    		}
+    	});
+
+		
+	</script>
+</block>

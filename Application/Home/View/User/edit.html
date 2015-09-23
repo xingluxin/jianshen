@@ -1,0 +1,41 @@
+<extend name="Base/common"/>
+
+<block name="body">
+
+		<include file="top"/>
+		
+		<div class="color">
+			<p class="p9 clear"><a href="{:U('User/index')}">个人中心</a> > <a href="#">个人资料</a></p>
+		  <form action="{:U('User/edit')}" class="form7" method="post">
+		     <p class="p13">个人资料</p> 
+		     <div>
+		         <label>真实姓名：</label>
+		         <input type="text" placeholder="请输入姓名" name="truename" value="{$info['truename']}">
+		     </div>
+		     <div class="xian">
+		         <label>性别：</label>
+		         <input type="radio" name="sex" value="1" <heq name="info['sex']" value="1">checked</heq>> 男 
+		         <input type="radio" name="sex" value="2" <heq name="info['sex']" value="2">checked</heq>> 女
+		      </div>
+		      <p>联系方式</p>
+		      <div>
+		         <label>E-emial：</label>
+		         <input type="text" name="email" value="{$info_uc[2]}">
+		     </div>
+		     <div>
+		         <label>QQ号码：</label>
+		         <input type="text" name="qq" value="{$info['qq']}">
+		     </div>
+		     <div>
+		         <label>手机号码：</label>
+		         <input type="text" name="mobile" value="{$info_uc[3]}">
+		     </div>
+		     <div class="controls Validform_checktip text-warning"></div>
+		     <div>
+		         <input type="submit" name="4" class="sub4">
+		     </div>
+		  </form>
+		</div><!--color end-->
+
+</block>
+

@@ -1,0 +1,336 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{$meta_title}|后台管理平台</title>
+    <link href="__ROOT__/Public/favicon.ico" type="image/x-icon" rel="shortcut icon">
+    <link rel="stylesheet" type="text/css" href="__CSS__/base.css" media="all">
+    <link rel="stylesheet" type="text/css" href="__CSS__/common.css" media="all">
+    <link rel="stylesheet" type="text/css" href="__CSS__/module.css">
+    <link rel="stylesheet" type="text/css" href="__CSS__/style.css" media="all">
+	<link rel="stylesheet" type="text/css" href="__CSS__/{$Think.config.COLOR_STYLE}.css" media="all">
+     <!--[if lt IE 9]>
+    <script type="text/javascript" src="__STATIC__/jquery-1.10.2.min.js"></script>
+    <![endif]--><!--[if gte IE 9]><!-->
+    <script type="text/javascript" src="__STATIC__/jquery-2.0.3.min.js"></script>
+    <script type="text/javascript" src="__JS__/jquery.mousewheel.js"></script>
+    <!--<![endif]-->
+    <block name="style"></block>
+</head>
+<body>
+    <!-- 头部 -->
+    <div class="header">
+        <!-- Logo -->
+        <span class="logo"></span>
+        <!-- /Logo -->
+
+        <!-- 主导航 -->
+        <ul class="main-nav">
+			<li <if condition="CONTROLLER_NAME heq Index">class="current"</if>><a href="{:U('Index/index');}">首页</a></li>
+			<li <if condition="CONTROLLER_NAME heq Article or CONTROLLER_NAME heq Category">class="current"</if>><a href="{:U('Article/index');}">内容</a></li>
+			<li <if condition="CONTROLLER_NAME heq User or CONTROLLER_NAME heq Pay">class="current"</if>><a href="{:U('User/index');}">用户</a></li>
+			<li <if condition="CONTROLLER_NAME heq Config">class="current"</if>><a href="{:U('Config/group');}">系统</a></li>
+			
+        </ul>
+       
+        <!-- 用户栏 -->
+        <div class="user-bar">
+            <a href="javascript:;" class="user-entrance"><i class="icon-user"></i></a>
+            <ul class="nav-list user-menu hidden">
+                <li class="manager">你好，<em title="{:session('user_auth.username')}">{:session('user_auth.username')}</em></li>
+                <li><a href="{:U('User/updatePassword')}">修改密码</a></li>
+                <li><a href="{:U('User/updateNickname')}">修改昵称</a></li>
+                <li><a href="{:U('Public/logout')}">退出</a></li>
+            </ul>
+        </div>
+         <!-- /主导航 -->
+        <ul class="main-nav" style="float:right;">
+        	<li><a href="{:U('Index/rmdirr')}" class="user-entrance">清除缓存</a></li>
+        	<li><a href="{:U('./Home/index')}" class="user-entrance" target="_blank">访问前台</a></li>
+        </ul>
+    </div>
+    <!-- /头部 -->
+
+    <!-- 边栏 -->
+    <div class="sidebar">
+        <!-- 子导航 -->
+        <block name="sidebar">
+            <div id="subnav" class="subnav">
+            	
+            	<if condition="CONTROLLER_NAME heq Category or CONTROLLER_NAME heq Article or CONTROLLER_NAME heq FeedBack">
+            	
+            	<h3>
+				 	<i class="icon <notin name="Think.CONTROLLER_NAME"  value="Category">icon-fold</notin>"></i>
+				 	分类管理
+			 	</h3>
+			 	<ul class="side-sub-menu <notin name="CONTROLLER_NAME"  value="Category">subnav-off</notin>">
+			 		<li ><a class="item" href="{:U('Category/index')}">查看分类</a></li>
+			 		
+			 	</ul>
+			 	
+			 	<volist name="nodes" id="sub_menu">
+			        <!-- 子导航 -->
+			        <notempty name="sub_menu">
+			            <h3>
+			            	<i class="icon <neq name="sub_menu['current']" value="1">icon-fold</neq>"></i>
+			            	<gt name="sub_menu['allow_publish']" value="0"><a class="item" href="{$sub_menu.url|U}">{$sub_menu.title}</a><else/>{$sub_menu.title}</gt>
+			            </h3>
+			            <ul class="side-sub-menu <neq name='sub_menu["current"]' value="1">subnav-off</neq>">
+			                <volist name="sub_menu['_child']" id="menu">
+			                    <li <if condition="$menu['id'] eq $cate_id or $menu['current'] eq 1">class="current"</if>>
+			                        <gt name="menu['allow_publish']" value="0"><a class="item" href="{$menu.url|U}">{$menu.title}</a><else/><a class="item" href="javascript:void(0);">{$menu.title}</a></gt>
+			
+			                        <!-- 一级子菜单 -->
+			                        <present name="menu['_child']">
+			                        <ul class="subitem">
+			                        	<foreach name="menu['_child']" item="three_menu">
+			                            <li>
+			                                <gt name="three_menu['allow_publish']" value="0"><a class="item" href="{$three_menu.url|U}">{$three_menu.title}</a><else/><a class="item" href="javascript:void(0);">{$three_menu.title}</a></gt>
+			                                <!-- 二级子菜单 -->
+			                                <present name="three_menu['_child']">
+			                                <ul class="subitem">
+			                                	<foreach name="three_menu['_child']" item="four_menu">
+			                                    <li>
+			                                        <gt name="four_menu['allow_publish']" value="0"><a class="item" href="{:U('index','cate_id='.$four_menu['id'])}">{$four_menu.title}</a><else/><a class="item" href="javascript:void(0);">{$four_menu.title}</a></gt>
+			                                        <!-- 三级子菜单 -->
+			                                        <present name="four_menu['_child']">
+			                                        <ul class="subitem">
+			                                        	<volist name="four_menu['_child']" id="five_menu">
+			                                            <li>
+			                                            	<gt name="five_menu['allow_publish']" value="0"><a class="item" href="{:U('index','cate_id='.$five_menu['id'])}">{$five_menu.title}</a><else/><a class="item" href="javascript:void(0);">{$five_menu.title}</a></gt>
+			                                            </li>
+			                                            </volist>
+			                                        </ul>
+			                                        </present>
+			                                        <!-- end 三级子菜单 -->
+			                                    </li>
+			                                     </foreach>
+			                                </ul>
+			                                </present>
+			                                <!-- end 二级子菜单 -->
+			                            </li>
+			                            </foreach>
+			                        </ul>
+			                        </present>
+			                        <!-- end 一级子菜单 -->
+			                    </li>
+			                </volist>
+			                
+			                <notpresent name="sub_menu['_child']">
+			                    <li class="">
+			                        <a class="item" href="{$sub_menu.url|U}">查看列表</a>
+			                    </li>
+			                    
+			                </notpresent>
+			            </ul>
+			        </notempty>
+			        <!-- /子导航 -->
+			    </volist>
+			    
+			    <h3>
+				 	<i class="icon <notin name="Think.CONTROLLER_NAME"  value="Config">icon-fold</notin>"></i>
+				 	附件管理
+			 	</h3>
+			 	<ul class="side-sub-menu <notin name="CONTROLLER_NAME"  value="Config">subnav-off</notin>">
+			 		<li><a class="item" href="{:U('Config/group')}">图片附件</a></li>
+			 		<li><a class="item" href="{:U('Config/index')}">文件附件</a></li>
+			 		
+			 	</ul>
+			 	
+			 	<h3>
+			        <em class="recycle"></em>
+			        <a href="{:U('FeedBack/index')}">意见反馈</a>
+			    </h3>
+
+			    <!-- 回收站 -->
+			    <h3>
+			        <em class="recycle"></em>
+			        <a href="{:U('article/recycle')}">回收站</a>
+			    </h3>
+			    
+			    </if>
+			    
+			    <if condition="CONTROLLER_NAME heq Config or CONTROLLER_NAME heq Database">
+			 	
+			 	<h3>
+				 	<i class="icon <notin name="Think.CONTROLLER_NAME"  value="Config">icon-fold</notin>"></i>
+				 	系统设置
+			 	</h3>
+			 	<ul class="side-sub-menu <notin name="CONTROLLER_NAME"  value="Config">subnav-off</notin>">
+			 		<li><a class="item" href="{:U('Config/group')}">网站设置</a></li>
+			 		<li><a class="item" href="{:U('Config/index')}">配置管理</a></li>
+			 		
+			 	</ul>
+			 	
+			 	<h3>
+				 	<i class="icon <notin name="Think.CONTROLLER_NAME"  value="Database">icon-fold</notin>"></i>
+				 	数据库备份
+			 	</h3>
+			 	<ul class="side-sub-menu <notin name="CONTROLLER_NAME"  value="Database">subnav-off</notin>">
+			 		<li><a class="item" href="{:U('Database/index',array('type'=>export))}">备份数据库</a></li>
+			 		<li><a class="item" href="{:U('Database/index',array('type'=>import))}">还原数据库</a></li>
+			 		
+			 	</ul>
+			 	
+			 	</if>
+			 	
+			 	<if condition="CONTROLLER_NAME heq User or CONTROLLER_NAME heq Pay">
+			 	
+			 	<h3>
+				 	<i class="icon <notin name="Think.CONTROLLER_NAME"  value="User">icon-fold</notin>"></i>
+				 	用户管理
+			 	</h3>
+			 	<ul class="side-sub-menu <notin name="CONTROLLER_NAME"  value="User">subnav-off</notin>">
+			 		<li><a class="item" href="{:U('User/index')}">用户信息</a></li>
+			 	</ul>
+			 	
+			 	<h3>
+				 	<i class="icon <notin name="Think.CONTROLLER_NAME"  value="Pay">icon-fold</notin>"></i>
+				 	支付管理
+			 	</h3>
+			 	<ul class="side-sub-menu <notin name="CONTROLLER_NAME"  value="Pay">subnav-off</notin>">
+			 		<li><a class="item" href="{:U('Pay/recharge')}">充值信息</a></li>
+			 		<li><a class="item" href="{:U('Pay/buy')}">购买信息</a></li>
+			 		<li><a class="item" href="{:U('Pay/excharge')}">提现申请</a></li>
+			 		
+			 	</ul>
+			 	
+			 	</if>
+			    
+            </div>
+        </block>
+        <!-- /子导航 -->
+    </div>
+    <!-- /边栏 -->
+
+    <!-- 内容区 -->
+    <div id="main-content">
+        <div id="top-alert" class="fixed alert alert-error" style="display: none;">
+            <button class="close fixed" style="margin-top: 4px;">&times;</button>
+            <div class="alert-content">这是内容</div>
+        </div>
+        <div id="main" class="main">
+            <block name="nav">
+            <!-- nav -->
+            <notempty name="_show_nav">
+            <div class="breadcrumb">
+                <span>您的位置:</span>
+                <assign name="i" value="1" />
+                <foreach name="_nav" item="v" key="k">
+                    <if condition="$i eq count($_nav)">
+                    <span>{$v}</span>
+                    <else />
+                    <span><a href="{$k}">{$v}</a>&gt;</span>
+                    </if>
+                    <assign name="i" value="$i+1" />
+                </foreach>
+            </div>
+            </notempty>
+            <!-- nav -->
+            </block>
+
+            <block name="body"> </block>
+        </div>
+        <div class="cont-ft">
+            <div class="copyright">
+                <div class="fl">感谢使用<a href="http://www.onethink.cn" target="_blank">OneThink</a>管理平台</div>
+                <div class="fr">V{$Think.const.ONETHINK_VERSION}</div>
+            </div>
+        </div>
+    </div>
+    <!-- /内容区 -->
+    <script type="text/javascript">
+    (function(){
+        var ThinkPHP = window.Think = {
+            "ROOT"   : "__ROOT__", //当前网站地址
+            "APP"    : "__APP__", //当前项目地址
+            "PUBLIC" : "__PUBLIC__", //项目公共目录地址
+            "DEEP"   : "{:C('URL_PATHINFO_DEPR')}", //PATHINFO分割符
+            "MODEL"  : ["{:C('URL_MODEL')}", "{:C('URL_CASE_INSENSITIVE')}", "{:C('URL_HTML_SUFFIX')}"],
+            "VAR"    : ["{:C('VAR_MODULE')}", "{:C('VAR_CONTROLLER')}", "{:C('VAR_ACTION')}"]
+        }
+    })();
+    </script>
+    <script type="text/javascript" src="__STATIC__/think.js"></script>
+    <script type="text/javascript" src="__JS__/common.js"></script>
+    <script type="text/javascript">
+        +function(){
+            var $window = $(window), $subnav = $("#subnav"), url;
+            $window.resize(function(){
+                //$("#main").css("min-height", $window.height() - 130);
+            	$("#main").css("min-height", $window.height() - 130);
+            }).resize();
+
+            /* 左边菜单高亮 */
+            url = window.location.pathname + window.location.search;
+            url = url.replace(/(\/(p)\/\d+)|(&p=\d+)|(\/(id)\/\d+)|(&id=\d+)|(\/(group)\/\d+)|(&group=\d+)/, "");
+            $subnav.find("a[href='" + url + "']").parent().addClass("current");
+            
+            $(function(){
+                $(".side-sub-menu li").hover(function(){
+                    $(this).addClass("hover");
+                },function(){
+                    $(this).removeClass("hover");
+                });
+            })
+
+            /* 左边菜单显示收起 */
+            $("#subnav").on("click", "h3", function(){
+                var $this = $(this);
+                $this.find(".icon").toggleClass("icon-fold");
+                $this.next().slideToggle("fast").siblings(".side-sub-menu:visible").
+                      prev("h3").find("i").addClass("icon-fold").end().end().hide();
+            });
+
+            $("#subnav h3 a").click(function(e){e.stopPropagation()});
+
+            /* 头部管理员菜单 */
+            $(".user-bar").mouseenter(function(){
+                var userMenu = $(this).children(".user-menu ");
+                userMenu.removeClass("hidden");
+                clearTimeout(userMenu.data("timeout"));
+            }).mouseleave(function(){
+                var userMenu = $(this).children(".user-menu");
+                userMenu.data("timeout") && clearTimeout(userMenu.data("timeout"));
+                userMenu.data("timeout", setTimeout(function(){userMenu.addClass("hidden")}, 100));
+            });
+
+	        /* 表单获取焦点变色 */
+	        $("form").on("focus", "input", function(){
+		        $(this).addClass('focus');
+	        }).on("blur","input",function(){
+				        $(this).removeClass('focus');
+			        });
+		    $("form").on("focus", "textarea", function(){
+			    $(this).closest('label').addClass('focus');
+		    }).on("blur","textarea",function(){
+			    $(this).closest('label').removeClass('focus');
+		    });
+
+            // 导航栏超出窗口高度后的模拟滚动条
+            var sHeight = $(".sidebar").height();
+            var subHeight  = $(".subnav").height();
+            var diff = subHeight - sHeight; //250
+            var sub = $(".subnav");
+            if(diff > 0){
+                $(window).mousewheel(function(event, delta){
+                    if(delta>0){
+                        if(parseInt(sub.css('marginTop'))>-10){
+                            sub.css('marginTop','0px');
+                        }else{
+                            sub.css('marginTop','+='+10);
+                        }
+                    }else{
+                        if(parseInt(sub.css('marginTop'))<'-'+(diff-10)){
+                            sub.css('marginTop','-'+(diff-10));
+                        }else{
+                            sub.css('marginTop','-='+10);
+                        }
+                    }
+                });
+            }
+        }();
+    </script>
+    <block name="script"></block>
+</body>
+</html>

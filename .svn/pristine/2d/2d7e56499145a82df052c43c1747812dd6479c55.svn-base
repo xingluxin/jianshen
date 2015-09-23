@@ -1,0 +1,40 @@
+<extend name="Base/common"/>
+
+<block name="body">
+
+		
+	<h4><img src="__IMG__/jies_02.png" style="width:2.8%">套餐介绍</h4>
+      <dl class="pai">
+        <dt><img src="__IMG__/jies_05.png"></dt>
+        <dd>详细介绍详细介绍详细介绍详细介绍详细介绍详细介绍详细介绍详细介绍</dd>
+      </dl><!--pai end-->
+       <dl class="pai">
+        <dt><img src="__IMG__/jies_08.png"></dt>
+        <dd>详细介绍详细介绍详细介绍详细介绍详细介绍详细介绍详细介绍详细介绍</dd>
+      </dl><!--pai end-->
+       <dl class="pai">
+        <dt><img src="__IMG__/jies_10.png"></dt>
+        <dd>详细介绍详细介绍详细介绍详细介绍详细介绍详细介绍详细介绍详细介绍</dd>
+      </dl><!--pai end-->
+      <h4><img src="__IMG__/jies_02.png" style="width:2.8%">产品介绍</h4>
+      <dl class="pai2">
+         <dt><img src="__IMG__/jies_13.png"></dt>
+         <dd class="dd1">亿健跑步机S370多功能跑步机家用 </dd>
+         <dd>超静音正品折叠健身器械</dd>
+         <dd class="dd3">价格  ¥ 2099.00-2899.00</dd>
+      </dl>
+      <dl class="pai2">
+         <dt><img src="__IMG__/jies_13.png"></dt>
+         <dd class="dd1">亿健跑步机S370多功能跑步机家用 </dd>
+         <dd>超静音正品折叠健身器械</dd>
+         <dd class="dd3">价格  ¥ 2099.00-2899.00</dd>
+      </dl>
+      <dl class="pai2">
+         <dt><img src="__IMG__/jies_13.png"></dt>
+         <dd class="dd1">亿健跑步机S370多功能跑步机家用 </dd>
+         <dd>超静音正品折叠健身器械</dd>
+         <dd class="dd3">价格  ¥ 2099.00-2899.00</dd>
+      </dl>
+
+</block>
+

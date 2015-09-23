@@ -1,0 +1,100 @@
+<extend name="Public/base"/>
+
+<block name="body">
+	<!-- 标题 -->
+	<div class="main-title">
+		<h2>
+		提现详情
+		</h2>
+	</div>
+	
+	<div class="sys-info">
+		<form id="form" action="{:U('')}" method="post" class="form-horizontal">
+		<table>
+			<tbody>
+				<tr>
+					<th>站内编号</th>
+					<td>{:$row['site_order']}</td>
+				</tr>
+				<tr>
+					<th>提现用户</th>
+					<td><a href="{:U('User/view',array('uid'=>$row['uid']))}">{:get_username($row['uid'])}</a></td>
+				</tr>
+				<tr>
+					<th>提现金额</th>
+					<td>{:$row['money']} 元</td>
+				</tr>
+				<tr>
+					<th>姓名</th>
+					<td>{:$row['truename']}</td>
+				</tr>
+				<tr>
+					<th>手机号</th>
+					<td>{:$row['mobile']}</td>
+				</tr>
+				<tr>
+					<th>创建时间</th>
+					<td>{$row['create_time']|time_format=###,'Y-m-d H:i:s'}</td>
+				</tr>
+				<tr>
+					<th>提现方式</th>
+					<td>{:getExchargeWay($row['way'])}</td>
+				</tr>
+				<if condition="$row['way'] neq  1"> value1
+					<tr>
+						<th>支付宝账号</th>
+						<td>{:$row['account']}</td>
+					</tr>
+				</if>
+				
+				<if condition="$row['way'] eq 1"> value1
+					<tr>
+						<th>卡号</th>
+						<td>{:$row['account']}</td>
+					</tr>
+					<tr>
+						<th>发卡行</th>
+						<td>{:$row['bank']}</td>
+					</tr>
+					<tr>
+						<th>开户网点</th>
+						<td>{:$row['branch']}</td>
+					</tr>
+				</if>
+				
+				<tr>
+					<th>订单状态</th>
+					<td>
+						<label class="radio">
+							<input type="radio" name="status" value="0" <eq name="row['status']" value="0">checked</eq> >申请中
+		                </label>
+		                <label class="radio">      
+							<input type="radio" name="status" value="1" <eq name="row['status']" value="1">checked</eq> >已打款
+		                </label>
+		                <label class="radio">      
+							<input type="radio" name="status" value="2" <eq name="row['status']" value="2">checked</eq> >已取消
+		                </label>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="form-item cf" style="margin-top:20px;">
+			<button class="btn submit-btn ajax-post hidden" id="submit" type="submit" target-form="form-horizontal">确 定</button>
+			<a class="btn btn-return" href="javascript:history.go(-1);">返 回</a>
+			<input type="hidden" name="id" value="{:I('get.id')}"/>
+		</div>
+		</form>
+	</div>
+	
+
+
+</block>
+
+<block name="script">
+<script type="text/javascript">
+
+$('#submit').click(function(){
+	$('#form').submit();
+});
+
+</script>

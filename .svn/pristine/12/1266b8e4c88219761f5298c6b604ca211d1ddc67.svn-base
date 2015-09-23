@@ -1,0 +1,19 @@
+<extend name="Base/common"/>
+
+<block name="body">
+
+		<include file="User/top"/>
+		
+		<div class="color">
+			<p class="p9 clear"><a href="{:U('User/index')}">个人中心</a> &gt; <a href="{:U('Pay/wallet')}">我的钱包</a> &gt;<a href="#">{:$meta_title}</a></p>
+			
+			<form action="{:U('Pay/recharge')}" class="form7" method="post">
+				充值金额：<input type="text" name="money" value="">
+				<input type="hidden" name="pay_item" value="recharge">
+				<input type="submit" name="submit" value="充值">
+			</form>
+		
+		</div><!--color end-->
+
+</block>
+

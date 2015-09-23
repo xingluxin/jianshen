@@ -1,0 +1,29 @@
+<extend name="Base/common"/>
+
+<block name="body">
+	<div class="banner">
+		<img src="__IMG__/4.png">
+	</div>
+	
+	<ul class="ul7">
+		<li><a href="#">论坛</a></li>
+		<li><a href="{:U('Index/introduction')}">介绍</a></li>
+		<li class="none"><a href="{:U('Index/advisory')}">咨询</a></li>
+	</ul>
+	
+	<h4><img src="__IMG__/jies_02.png" style="width:2.8%">{:get_category_title(54)}</h4>
+	<div class="dl dlxian">
+		<volist name="list_jiankang" id="data">
+			<dl>
+			   <dt><a href="{:U('Document/detail',array('id'=>$data['id']))}"><img src="{$data['pic_id']|get_cover='path'}"></a></dt>
+			   <dd><a href="{:U('Document/detail',array('id'=>$data['id']))}">{:$data['title']}</a></dd>
+			   <dd class="dd2">{$data['update_time']|time_format=###,'Y-m-d H:i'}</dd>
+			</dl>
+	    </volist> 
+		<p class="p24 clear"><a href="{:U('Document/index',array('cate_id'=>54))}">查看更多+</a></p>
+		
+	</div>
+	
+	
+
+</block>
